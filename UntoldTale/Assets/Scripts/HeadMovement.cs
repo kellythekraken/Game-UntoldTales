@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class HeadMovement : MonoBehaviour
 {
     Camera mainCam;
@@ -11,6 +11,7 @@ public class HeadMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
+
     void Start()
     {
         mainCam = Camera.main;
@@ -19,14 +20,21 @@ public class HeadMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.deltaTime);
         //MoveToCursor();
+        MoveFromInput();
     }
 
-    void OnMove()
+    void MoveFromInput()
     {
-
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
+    void OnMove(InputValue value)
+    {
+        Debug.Log("detect move input");
+        moveInput = value.Get<Vector2>();
+    }
+
+    /*
     void RotateToCursor()
     {
         direction = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -34,14 +42,11 @@ public class HeadMovement : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle,Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation,rotation,rotSpeed * Time.deltaTime);
     }
-
-    void MoveByInput()
-    {
-
-    }
+    
     void MoveToCursor()
     {
         Vector2 cursorPos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         transform.position = Vector2.MoveTowards(transform.position,cursorPos,moveSpeed * Time.deltaTime);
     }
+    */
 }
