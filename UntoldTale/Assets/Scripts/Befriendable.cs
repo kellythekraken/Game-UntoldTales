@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Befriendable : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private bool _befriended = false;
+    public bool befriended {get {return _befriended;} set {_befriended = value; Befriend(value);}}
+    public float friendliness = 0f; //goes up to 100%
+    [SerializeField] Color trueColor;
+    SpriteRenderer sprite;
+
     void Start()
     {
-        
+        sprite = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Befriend(bool befriend)
     {
-        
+        if(!befriend) return;
+        gameObject.tag = "Friend";
+        sprite.color = trueColor;
     }
+
 }
