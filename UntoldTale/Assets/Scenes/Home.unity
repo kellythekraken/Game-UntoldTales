@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 129588241}
   - component: {fileID: 129588243}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Unfamiliar Blob
   m_TagString: FriendToBe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -722,7 +722,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   befriendList: []
-  befriendSpeed: 50
+  befriendSpeed: 10
+  exhaustSpeed: 60
+  exhaustRate: 0
+  rechargeSpeed: 20
+  socialBattery: 100
 --- !u!1 &330955448
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +905,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545788559}
-  m_LocalRotation: {x: -1.0255803e-15, y: 0.000000024367722, z: 2.4991057e-23, w: 1}
+  m_LocalRotation: {x: 1.0255803e-15, y: 0.000000024367722, z: -2.4991057e-23, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2636,7 +2640,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963001528}
-  m_LocalRotation: {x: -1.0255803e-15, y: 0.000000024367722, z: 2.4991057e-23, w: 1}
+  m_LocalRotation: {x: 1.0255803e-15, y: 0.000000024367722, z: -2.4991057e-23, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
