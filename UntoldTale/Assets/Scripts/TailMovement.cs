@@ -10,6 +10,7 @@ public class TailMovement : MonoBehaviour
     public Transform targetDir,wiggleDir;
     public float targetDistance;
     public float smoothSpeed;
+    public float time;
 
     public float wiggleSpeed,wiggleMagnitude;
 
@@ -20,10 +21,11 @@ public class TailMovement : MonoBehaviour
         segmentVelocity = new Vector3[length];
         ResetPosition();
     }
-    void Update()
+    void FixedUpdate()
     {
-        //wiggleDir.localRotation = Quaternion.Euler(0,0,Mathf.Sin(Time.time * wiggleSpeed) * wiggleMagnitude);
-        
+        if(!HeadMovement.move) return;
+        wiggleDir.localRotation = Quaternion.Euler(0,0,Mathf.Sin(Time.time * wiggleSpeed) * wiggleMagnitude);
+
         segmentPoses[0] = targetDir.position;
         for(int i = 1; i < length ; i++)
         {

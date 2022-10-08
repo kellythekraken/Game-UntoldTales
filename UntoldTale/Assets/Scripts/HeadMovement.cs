@@ -8,10 +8,9 @@ public class HeadMovement : MonoBehaviour
     public float rotSpeed;
     public float moveSpeed;
     private Vector2 direction;
-
     private Rigidbody2D rb;
     private Vector2 moveInput;
-
+    public static bool move = true;
     void Start()
     {
         mainCam = Camera.main;
@@ -20,6 +19,7 @@ public class HeadMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(!move) return;
         //MoveToCursor();
         MoveFromInput();
     }
@@ -30,8 +30,9 @@ public class HeadMovement : MonoBehaviour
     }
     void OnMove(InputValue value)
     {
-        Debug.Log("detect move input");
         moveInput = value.Get<Vector2>();
+        if(moveInput == Vector2.zero) move = false;
+        else{move = true;}
     }
 
     /*
