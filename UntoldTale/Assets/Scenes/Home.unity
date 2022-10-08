@@ -234,7 +234,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.8, y: 0}
   serializedVersion: 2
-  m_Radius: 0.9
+  m_Radius: 1.02
 --- !u!50 &25429012
 Rigidbody2D:
   serializedVersion: 4
@@ -444,7 +444,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.8, y: 0}
   serializedVersion: 2
-  m_Radius: 0.9
+  m_Radius: 1.02
 --- !u!50 &87730469
 Rigidbody2D:
   serializedVersion: 4
@@ -823,7 +823,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545788559}
-  m_LocalRotation: {x: 1.0255803e-15, y: 0.000000024367722, z: -2.4991057e-23, w: 1}
+  m_LocalRotation: {x: -1.0255803e-15, y: 0.000000024367722, z: 2.4991057e-23, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1052,7 +1052,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.8, y: 0}
   serializedVersion: 2
-  m_Radius: 0.9
+  m_Radius: 1.02
 --- !u!50 &608135624
 Rigidbody2D:
   serializedVersion: 4
@@ -1938,7 +1938,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.8, y: 0}
   serializedVersion: 2
-  m_Radius: 0.9
+  m_Radius: 1.02
 --- !u!50 &1490767328
 Rigidbody2D:
   serializedVersion: 4
@@ -2342,7 +2342,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.8, y: 0}
   serializedVersion: 2
-  m_Radius: 0.9
+  m_Radius: 1.02
 --- !u!50 &1806092968
 Rigidbody2D:
   serializedVersion: 4
@@ -2475,7 +2475,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.8, y: 0}
   serializedVersion: 2
-  m_Radius: 0.9
+  m_Radius: 1.02
 --- !u!50 &1808835659
 Rigidbody2D:
   serializedVersion: 4
@@ -2595,7 +2595,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963001528}
-  m_LocalRotation: {x: 1.0255803e-15, y: 0.000000024367722, z: -2.4991057e-23, w: 1}
+  m_LocalRotation: {x: -1.0255803e-15, y: 0.000000024367722, z: 2.4991057e-23, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
