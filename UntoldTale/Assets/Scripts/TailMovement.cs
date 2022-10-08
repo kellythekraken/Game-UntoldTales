@@ -7,10 +7,10 @@ public class TailMovement : MonoBehaviour
     public int length;
     public LineRenderer lineRenderer;
     public Vector3[] segmentPoses,segmentVelocity;
-    public Transform targetDir,wiggleDir;
+    public Transform targetDir;
+    public Transform wiggleDir;
     public float targetDistance;
     public float smoothSpeed;
-    public float time;
 
     public float wiggleSpeed,wiggleMagnitude;
 
@@ -29,6 +29,7 @@ public class TailMovement : MonoBehaviour
         segmentPoses[0] = targetDir.position;
         for(int i = 1; i < length ; i++)
         {
+            //Vector3 wiggle = new Vector3(0,0, wiggleDir.localRotation.z);
             Vector3 targetPos = segmentPoses[i-1] + (segmentPoses[i] - segmentPoses[i-1]).normalized * targetDistance;
             segmentPoses[i] = Vector3.SmoothDamp(segmentPoses[i],targetPos,ref segmentVelocity[i], smoothSpeed);
             //segmentPoses[i] = Vector3.SmoothDamp(segmentPoses[i],segmentPoses[i-1] + targetDir.right * targetDistance, ref segmentVelocity[i], smoothSpeed);
