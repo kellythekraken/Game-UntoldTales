@@ -23,17 +23,12 @@ public class RangeDetection : MonoBehaviour
         exhaustColorKeys = exhaustColor.colorKeys;
         
     }
-    void Update()
+    void FixedUpdate()
     {
-        if(exhaustRate>0) {
-            if(socialBattery>0f) socialBattery -= exhaustSpeed * exhaustRate * Time.deltaTime;
-        }
-        else{ 
-        if(socialBattery<100f) socialBattery += rechargeSpeed * Time.deltaTime;
-        }
-
-        if(socialBattery>0)
+        if(exhaustRate>0 && socialBattery>0f) //socializing, reduce social battery
         {
+            socialBattery -= exhaustSpeed * exhaustRate * Time.deltaTime;
+            ChangeExhaustionColor();
             foreach(var i in befriendList) 
             {
                 if(i.friendliness<100) 
@@ -49,18 +44,19 @@ public class RangeDetection : MonoBehaviour
                 }
             }
         }
-        if(socialBattery<100f)
+        else if(exhaustRate == 0 && socialBattery<100) //alone time. increase social battery
         {
+            socialBattery += rechargeSpeed * Time.deltaTime;
             ChangeExhaustionColor();
         }
     }
 
-    void ChangeExhaustionColor()
+    private void ChangeExhaustionColor()
     {
         var lerpVal = socialBattery/100f;
         tailrender.colorGradient = GradientLerp(exhaustColor,healthyColor,lerpVal,false,false);
     }
-    private void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.CompareTag("FriendToBe")) 
         {
@@ -78,7 +74,8 @@ public class RangeDetection : MonoBehaviour
         }
     }
 
-    UnityEngine.Gradient GradientLerp(UnityEngine.Gradient a, UnityEngine.Gradient b, float t, bool noAlpha, bool noColor) {
+    private Gradient GradientLerp(Gradient a, Gradient b, float t, bool noAlpha, bool noColor) 
+    {
         //list of all the unique key times
         var keysTimes = new List<float>();
 
@@ -121,7 +118,7 @@ public class RangeDetection : MonoBehaviour
             alphas[i] = new GradientAlphaKey(clr.a, key);
         }
 
-        var g = new UnityEngine.Gradient();
+        var g = new Gradient();
         g.SetKeys(clrs, alphas);
 
         return g;
