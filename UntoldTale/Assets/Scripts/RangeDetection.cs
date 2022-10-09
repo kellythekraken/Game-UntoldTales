@@ -26,7 +26,11 @@ public class RangeDetection : MonoBehaviour
         {
             foreach(var i in befriendList) 
             {
-                if(i.friendliness<100) i.friendliness += befriendSpeed * Time.deltaTime;
+                if(i.friendliness<100) 
+                {
+                    i.friendliness += befriendSpeed * Time.deltaTime;
+                    i.StartBefriending();
+                }
                 else
                 {
                     i.befriended = true;

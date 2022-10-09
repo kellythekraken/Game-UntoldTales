@@ -10,10 +10,14 @@ public class Befriendable : MonoBehaviour
     [SerializeField] Color trueColor;
     SpriteRenderer sprite;
 
+    Color startColor, currentColor;
+    public float lerpValue = 0f;
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+        startColor = sprite.color;
     }
+
 
     void Befriend(bool befriend)
     {
@@ -22,4 +26,26 @@ public class Befriendable : MonoBehaviour
         sprite.color = trueColor;
     }
 
+    //called in the update method of rangedetection
+    public void StartBefriending()
+    {
+        //sync up the friendliness to the color value
+        sprite.color = CalculateColor();
+    }
+
+    Color CalculateColor()
+    {
+        lerpValue = friendliness/100f;
+        return Color.Lerp(startColor,trueColor,lerpValue);
+    }
+/*
+    IEnumerator ChangeColor(float startcolor)
+    {
+        for(float i = 0f; i>=friendliness; i-=0.05f)
+        {
+            Color newColor;
+            trueColor.r * i;
+        }
+    }
+    */
 }
