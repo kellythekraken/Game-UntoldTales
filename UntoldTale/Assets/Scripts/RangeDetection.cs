@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class RangeDetection : MonoBehaviour
 {
     [SerializeField] List<Befriendable> befriendList;
     [SerializeField] LineRenderer tailrender;
+    [SerializeField] Light2D areaLight;
     public float befriendSpeed = 1f;    //could be modified as you become better at it
     public float exhaustSpeed = 1f;      //will DOUBLE if you befriending multiple at once
     public int exhaustRate = 0;         //how many you're socializing at once
     public float rechargeSpeed = 1f;
-    public float socialBattery = 100f;   //reduce when you're befriending blobs
+    public float socialBattery = 1f;   //reduce when you're befriending blobs
     public Gradient exhaustColor;
     private Gradient healthyColor;
 
@@ -54,6 +56,7 @@ public class RangeDetection : MonoBehaviour
     private void ChangeExhaustionColor()
     {
         var lerpVal = socialBattery/100f;
+        areaLight.intensity = lerpVal;
         tailrender.colorGradient = GradientLerp(exhaustColor,healthyColor,lerpVal,false,false);
     }
     void OnTriggerEnter2D(Collider2D collider)
