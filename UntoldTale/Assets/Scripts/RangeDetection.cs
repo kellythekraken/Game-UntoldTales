@@ -16,6 +16,7 @@ public class RangeDetection : MonoBehaviour
     public Gradient exhaustColor;
     private Gradient healthyColor;
 
+
     GradientColorKey[] healthyColorKeys,exhaustColorKeys;
     void OnEnable() =>befriendList = new List<Befriendable>();
     void Start()
@@ -23,7 +24,6 @@ public class RangeDetection : MonoBehaviour
         healthyColor = tailrender.colorGradient;
         healthyColorKeys = healthyColor.colorKeys;
         exhaustColorKeys = exhaustColor.colorKeys;
-        
     }
     void FixedUpdate()
     {
@@ -38,11 +38,11 @@ public class RangeDetection : MonoBehaviour
                     i.friendliness += befriendSpeed * Time.deltaTime;
                     i.StartBefriending();
                 }
-                else
+                else if (i.friendliness>=100)
                 {
                     i.befriended = true;
-                    befriendList.Remove(i);
                     exhaustRate --;
+                    //befriendList.Remove(i);
                 }
             }
         }
@@ -63,8 +63,8 @@ public class RangeDetection : MonoBehaviour
     {
         if(collider.CompareTag("FriendToBe")) 
         {
-            befriendList.Add(collider.GetComponentInParent<Befriendable>());
             exhaustRate ++;
+            befriendList.Add(collider.GetComponentInParent<Befriendable>());
         }
     }
 
@@ -72,8 +72,8 @@ public class RangeDetection : MonoBehaviour
     {
         if(collider.CompareTag("FriendToBe")) 
         {
-            befriendList.Remove(collider.GetComponentInParent<Befriendable>());
             exhaustRate --;
+            befriendList.Remove(collider.GetComponentInParent<Befriendable>());
         }
     }
 
