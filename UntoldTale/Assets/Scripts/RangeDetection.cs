@@ -5,14 +5,24 @@ using UnityEngine;
 public class RangeDetection : MonoBehaviour
 {
     [SerializeField] List<Befriendable> befriendList;
+    [SerializeField] LineRenderer tailrender;
     public float befriendSpeed = 1f;    //could be modified as you become better at it
     public float exhaustSpeed = 1f;      //will DOUBLE if you befriending multiple at once
     public int exhaustRate = 0;         //how many you're socializing at once
     public float rechargeSpeed = 1f;
     public float socialBattery = 100f;   //reduce when you're befriending blobs
+    public Gradient exhaustColor;
+    private Gradient healthyColor;
 
+    GradientColorKey[] healthyColorKeys,exhaustColorKeys;
     void OnEnable() =>befriendList = new List<Befriendable>();
-
+    void Start()
+    {
+        healthyColor = tailrender.colorGradient;
+        healthyColorKeys = healthyColor.colorKeys;
+        exhaustColorKeys = exhaustColor.colorKeys;
+        
+    }
     void Update()
     {
         if(exhaustRate>0) {
@@ -39,6 +49,16 @@ public class RangeDetection : MonoBehaviour
                 }
             }
         }
+        if(socialBattery<100f)
+        {
+            ChangeExhaustionColor();
+        }
+    }
+
+    void ChangeExhaustionColor()
+    {
+        var lerpVal = socialBattery/100f;
+        tailrender.colorGradient = GradientLerp(exhaustColor,healthyColor,lerpVal,false,false);
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -56,5 +76,54 @@ public class RangeDetection : MonoBehaviour
             befriendList.Remove(collider.GetComponentInParent<Befriendable>());
             exhaustRate --;
         }
+    }
+
+    UnityEngine.Gradient GradientLerp(UnityEngine.Gradient a, UnityEngine.Gradient b, float t, bool noAlpha, bool noColor) {
+        //list of all the unique key times
+        var keysTimes = new List<float>();
+
+        if (!noColor) {
+            for (int i = 0; i < a.colorKeys.Length; i++) {
+                float k = a.colorKeys[i].time;
+                if (!keysTimes.Contains(k))
+                    keysTimes.Add(k);
+            }
+
+            for (int i = 0; i < b.colorKeys.Length; i++) {
+                float k = b.colorKeys[i].time;
+                if (!keysTimes.Contains(k))
+                    keysTimes.Add(k);
+            }
+        }
+
+        if (!noAlpha) {
+            for (int i = 0; i < a.alphaKeys.Length; i++) {
+                float k = a.alphaKeys[i].time;
+                if (!keysTimes.Contains(k))
+                    keysTimes.Add(k);
+            }
+
+            for (int i = 0; i < b.alphaKeys.Length; i++) {
+                float k = b.alphaKeys[i].time;
+                if (!keysTimes.Contains(k))
+                    keysTimes.Add(k);
+            }
+        }
+
+        GradientColorKey[] clrs = new GradientColorKey[keysTimes.Count];
+        GradientAlphaKey[] alphas = new GradientAlphaKey[keysTimes.Count];
+
+        //Pick colors of both gradients at key times and lerp them
+        for (int i = 0; i < keysTimes.Count; i++) {
+            float key = keysTimes[i];
+            var clr = Color.Lerp(a.Evaluate(key), b.Evaluate(key), t);
+            clrs[i] = new GradientColorKey(clr, key);
+            alphas[i] = new GradientAlphaKey(clr.a, key);
+        }
+
+        var g = new UnityEngine.Gradient();
+        g.SetKeys(clrs, alphas);
+
+        return g;
     }
 }

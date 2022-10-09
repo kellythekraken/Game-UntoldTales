@@ -11,7 +11,6 @@ public class Befriendable : MonoBehaviour
     SpriteRenderer sprite;
 
     Color startColor, currentColor;
-    public float lerpValue = 0f;
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -30,22 +29,7 @@ public class Befriendable : MonoBehaviour
     public void StartBefriending()
     {
         //sync up the friendliness to the color value
-        sprite.color = CalculateColor();
+        var lerpValue = friendliness/100f;
+        sprite.color = Color.Lerp(startColor,trueColor,lerpValue);
     }
-
-    Color CalculateColor()
-    {
-        lerpValue = friendliness/100f;
-        return Color.Lerp(startColor,trueColor,lerpValue);
-    }
-/*
-    IEnumerator ChangeColor(float startcolor)
-    {
-        for(float i = 0f; i>=friendliness; i-=0.05f)
-        {
-            Color newColor;
-            trueColor.r * i;
-        }
-    }
-    */
 }
