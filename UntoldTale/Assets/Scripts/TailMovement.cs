@@ -49,6 +49,7 @@ public class TailMovement : MonoBehaviour
 
     void ResetCurl()
     {
+        if(isCurling) return;
         segmentPoses[0] = targetDir.position;
 
         float x = 0;
@@ -61,6 +62,7 @@ public class TailMovement : MonoBehaviour
             segmentPoses[i] = new Vector3(x,y,0f) + segmentPoses[i-1];
         }
         lineRenderer.SetPositions(segmentPoses);
+        isCurling = true;
     }
     public float angleVal;
     public float xSpace, ySpace; // Space ySpaceetween the spirals
@@ -71,7 +73,7 @@ public class TailMovement : MonoBehaviour
 
    //     Vector3 targetPos = segmentPoses[i-1] + (segmentPoses[i] - segmentPoses[i-1]).normalized * targetDistance;
     }
-    bool isCurling = false;
+    public bool isCurling = false;
     IEnumerator SmoothCurl()
     {
         isCurling = true;
@@ -91,12 +93,6 @@ public class TailMovement : MonoBehaviour
                 y = (xSpace + ySpace * angle) * Mathf.Sin(angle);
                 Vector3 targetPos = new Vector3(x,y,0f) + segmentPoses[i-1];
                 segmentPoses[i] = Vector3.Lerp(segmentPoses[i],targetPos, time / duration);
-
-                if(segmentPoses[segmentPoses.Length -1] == targetPos) 
-                {
-                    yield return new WaitForSeconds(1f);
-                    isCurling = false;
-                }
 
             }
             lineRenderer.SetPositions(segmentPoses);

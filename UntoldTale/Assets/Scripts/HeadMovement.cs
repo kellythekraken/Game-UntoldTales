@@ -11,10 +11,12 @@ public class HeadMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
     public static bool move = true;
+    TailMovement tailScript;
     void Start()
     {
         mainCam = Camera.main;
         rb = GetComponent<Rigidbody2D>();
+        tailScript = GetComponentInChildren<TailMovement>();
     }
 
     void FixedUpdate()
@@ -27,6 +29,7 @@ public class HeadMovement : MonoBehaviour
     void MoveFromInput()
     {
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+        tailScript.isCurling = false;
     }
     void OnMove(InputValue value)
     {
