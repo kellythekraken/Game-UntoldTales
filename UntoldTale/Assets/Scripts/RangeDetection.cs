@@ -6,21 +6,22 @@ using UnityEngine.Rendering.Universal;
 public class RangeDetection : MonoBehaviour
 {
     [SerializeField] List<Befriendable> befriendList;
-    [SerializeField] LineRenderer tailrender;
     [SerializeField] Light2D areaLight;
+    [SerializeField] TailMovement tailScript;
+    LineRenderer tailrender;
     public float befriendSpeed = 1f;    //could be modified as you become better at it
     public float exhaustSpeed = 1f;      //will DOUBLE if you befriending multiple at once
     public int exhaustRate = 0;         //how many you're socializing at once
     public float rechargeSpeed = 1f;
-    public float socialBattery = 1f;   //reduce when you're befriending blobs
+    public float socialBattery = 100f;   //reduce when you're befriending blobs
     public Gradient exhaustColor;
     private Gradient healthyColor;
-
 
     GradientColorKey[] healthyColorKeys,exhaustColorKeys;
     void OnEnable() =>befriendList = new List<Befriendable>();
     void Start()
     {
+        tailrender = tailScript.GetComponent<LineRenderer>();
         healthyColor = tailrender.colorGradient;
         healthyColorKeys = healthyColor.colorKeys;
         exhaustColorKeys = exhaustColor.colorKeys;
@@ -45,8 +46,8 @@ public class RangeDetection : MonoBehaviour
                     friend.friendliness += befriendSpeed * Time.deltaTime;
                     friend.StartBefriending();
                 }
-
             }
+            if(socialBattery <5f) tailScript.CurlUp();
         }
         else if(exhaustRate == 0 && socialBattery<100) //alone time. increase social battery
         {

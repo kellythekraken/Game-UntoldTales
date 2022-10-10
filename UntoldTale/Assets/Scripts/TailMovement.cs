@@ -10,7 +10,7 @@ public class TailMovement : MonoBehaviour
     public Transform targetDir;
     public Transform wiggleDir;
     public float targetDistance;
-    public float smoothSpeed;
+    public float smoothSpeed, curlSpeed;
 
     public float wiggleSpeed,wiggleMagnitude;
 
@@ -19,13 +19,13 @@ public class TailMovement : MonoBehaviour
         lineRenderer.positionCount = length;
         segmentPoses = new Vector3[length];
         segmentVelocity = new Vector3[length];
-        ResetPosition();
+        ResetCurl();
+        //ResetPosition();
     }
     void FixedUpdate()
     {
         if(!HeadMovement.move) return;
-        wiggleDir.localRotation = Quaternion.Euler(0,0,Mathf.Sin(Time.time * wiggleSpeed) * wiggleMagnitude);
-
+        //wiggleDir.localRotation = Quaternion.Euler(0,0,Mathf.Sin(Time.time * wiggleSpeed) * wiggleMagnitude);
         segmentPoses[0] = targetDir.position;
         for(int i = 1; i < length ; i++)
         {
@@ -45,5 +45,67 @@ public class TailMovement : MonoBehaviour
             segmentPoses[i] = segmentPoses[i-1] + targetDir.right * targetDistance;
         }
         lineRenderer.SetPositions(segmentPoses);
+    }
+
+    void ResetCurl()
+    {
+        segmentPoses[0] = targetDir.position;
+
+        float x = 0;
+        float y = 0;
+        for (int i = 1; i < length; i++)
+        {
+            var angle = angleVal * i;
+            x = (xSpace + ySpace * angle) * Mathf.Cos(angle);
+            y = (xSpace + ySpace * angle) * Mathf.Sin(angle);
+            segmentPoses[i] = new Vector3(x,y,0f) + segmentPoses[i-1];
+        }
+        lineRenderer.SetPositions(segmentPoses);
+    }
+    public float angleVal;
+    public float xSpace, ySpace; // Space ySpaceetween the spirals
+    public void CurlUp()
+    {
+        //stop movement input for like 2 seconds
+        if(!isCurling) StartCoroutine(SmoothCurl());
+
+   //     Vector3 targetPos = segmentPoses[i-1] + (segmentPoses[i] - segmentPoses[i-1]).normalized * targetDistance;
+    }
+    bool isCurling = false;
+    IEnumerator SmoothCurl()
+    {
+        Debug.Log("start curling");
+        isCurling = true;
+        segmentPoses[0] = targetDir.position;
+
+        float x = 0;
+        float y = 0;
+        Vector3 velocity = Vector3.zero;
+        float time = 0;
+        float duration = 2f;
+        while(time < duration)//animate the curl
+        {
+            for (int i = 1; i < length; i++)    //creating the curl bit by bit
+            {
+                var angle = angleVal * i;
+                x = (xSpace + ySpace * angle) * Mathf.Cos(angle);
+                y = (xSpace + ySpace * angle) * Mathf.Sin(angle);
+                Vector3 targetPos = new Vector3(x,y,0f) + segmentPoses[i-1];
+                segmentPoses[i] = Vector3.Lerp(segmentPoses[i],targetPos, time / duration);
+
+                if(segmentPoses[segmentPoses.Length -1] == targetPos) 
+                {
+                    Debug.Log("finished curling");
+                    yield return new WaitForSeconds(1f);
+                    isCurling = false;
+                }
+
+            }
+            lineRenderer.SetPositions(segmentPoses);
+            Debug.Log("set position");
+            time += Time.deltaTime;
+            yield return null;
+        }
+        Debug.Log("time out!");
     }
 }
