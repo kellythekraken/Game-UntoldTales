@@ -31,6 +31,7 @@ public class Befriendable : MonoBehaviour
     void Befriend(bool befriend)
     {
         if(!befriend) return;
+        Debug.Log("befriended!");
         gameObject.tag = "Friend";
         sprite.color = trueColor;
         myCollider.enabled = false;

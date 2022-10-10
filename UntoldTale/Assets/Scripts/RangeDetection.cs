@@ -31,19 +31,22 @@ public class RangeDetection : MonoBehaviour
         {
             socialBattery -= exhaustSpeed * exhaustRate * Time.deltaTime;
             ChangeExhaustionColor();
-            foreach(var i in befriendList) 
+            for(int i = 0; i<befriendList.Count;i ++) 
             {
-                if(i.friendliness<100) 
+                var friend = befriendList[i];
+                if (friend.friendliness>=100)
                 {
-                    i.friendliness += befriendSpeed * Time.deltaTime;
-                    i.StartBefriending();
-                }
-                else if (i.friendliness>=100)
-                {
-                    i.befriended = true;
+                    Debug.Log("already friend!");
+                    friend.befriended = true;
                     exhaustRate --;
-                    //befriendList.Remove(i);
+                    befriendList.Remove(friend);
                 }
+                else if(friend.friendliness<100) 
+                {
+                    friend.friendliness += befriendSpeed * Time.deltaTime;
+                    friend.StartBefriending();
+                }
+
             }
         }
         else if(exhaustRate == 0 && socialBattery<100) //alone time. increase social battery
