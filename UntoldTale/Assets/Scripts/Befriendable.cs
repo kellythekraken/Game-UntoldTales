@@ -5,7 +5,7 @@ using UnityEngine.U2D.Animation;
 
 public class Befriendable : MonoBehaviour
 {
-    public bool befriended {get {return _befriended;} set {_befriended = value; Befriend(value);}}
+    public bool befriended {get {return _befriended;} set {_befriended = value; if(value) Befriend();}}
     public float friendliness = 0f; //goes up to 100%
     private bool _befriended = false;
     [SerializeField] Color trueColor;
@@ -28,10 +28,8 @@ public class Befriendable : MonoBehaviour
     }
 
 
-    void Befriend(bool befriend)
+    void Befriend()
     {
-        if(!befriend) return;
-        Debug.Log("befriended!");
         gameObject.tag = "Friend";
         sprite.color = trueColor;
         myCollider.enabled = false;
