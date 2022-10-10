@@ -74,7 +74,6 @@ public class TailMovement : MonoBehaviour
     bool isCurling = false;
     IEnumerator SmoothCurl()
     {
-        Debug.Log("start curling");
         isCurling = true;
         segmentPoses[0] = targetDir.position;
 
@@ -95,17 +94,44 @@ public class TailMovement : MonoBehaviour
 
                 if(segmentPoses[segmentPoses.Length -1] == targetPos) 
                 {
-                    Debug.Log("finished curling");
                     yield return new WaitForSeconds(1f);
                     isCurling = false;
                 }
 
             }
             lineRenderer.SetPositions(segmentPoses);
-            Debug.Log("set position");
             time += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("time out!");
     }
+    /*    IEnumerator SmoothCurl()
+    {
+        Debug.Log("start curling");
+        isCurling = true;
+        //segmentPoses[0] = targetDir.position;
+
+        float x = 0;
+        float y = 0;
+        Vector3 velocity = Vector3.zero;
+        float time = 0;
+        float duration = 5f;
+        while(time < duration)//animate the curl
+        {
+            for (int i = 1; i < length; i++)    //animating each point of linerender
+            {
+                var angle = angleVal * i;
+                x = (xSpace + ySpace * angle) * Mathf.Cos(angle);
+                y = (xSpace + ySpace * angle) * Mathf.Sin(angle);
+                Vector3 targetPos = new Vector3(x,y,0f) + segmentPoses[i-1];
+                lineRenderer.SetPosition(0,targetPos);
+                yield return null;
+
+                //segmentPoses[i] = targetPos;
+                // segmentPoses[i] = Vector3.Lerp(segmentPoses[i],targetPos, time / duration);
+                //segmentPoses[0] = Vector3.Lerp(segmentPoses[0],targetPos,time / duration);
+            }
+            time += Time.deltaTime;
+        }
+    }
+    */
 }
