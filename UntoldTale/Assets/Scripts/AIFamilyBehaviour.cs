@@ -14,8 +14,8 @@ public class AIFamilyBehaviour : MonoBehaviour
     {
         wormi = HeadMovement.Instance.transform;
         rb = GetComponentInChildren<Rigidbody2D>();
-        calculatedRadius = Mathf.Max(transform.localPosition.x, transform.localPosition.y);
-        //GetComponent<CircleCollider2D>().radius * 2 + 1;
+
+        calculatedRadius = transform.localScale.x * GetComponent<CircleCollider2D>().radius +0.5f;
     }
 
     void FixedUpdate()
