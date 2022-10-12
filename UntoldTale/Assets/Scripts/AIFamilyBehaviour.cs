@@ -4,29 +4,34 @@ using UnityEngine;
 
 public class AIFamilyBehaviour : MonoBehaviour
 {
-    bool follow = true; //follow on startup, to create that start animation
-    public float speed, minimumDistance;
-    public Transform wormi;
+    public bool follow = true; //follow on startup, to create that start animation
+    public float speed;
+    Transform wormi;
     Rigidbody2D rb;
-
+    Transform center;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        wormi = HeadMovement.Instance.transform;
+        rb = GetComponentInChildren<Rigidbody2D>();
+        center = rb.transform;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(follow)
         {
-            if(Vector2.Distance(transform.position,wormi.position) > minimumDistance)
-            {
-                Vector2 newPosition = Vector2.MoveTowards(transform.position,wormi.position, speed * Time.deltaTime);
-                rb.MovePosition(newPosition);
+            //Vector2 newPosition = Vector2.Lerp(center.position,wormi.position, speed * Time.deltaTime);
+            //rb.MovePosition(newPosition);
 
-                //rb.AddRelativeForce(Vector3.forward * speed, ForceMode2D.Force);
-                //transform.position = Vector3.MoveTowards(transform.position,wormi.position, speed * Time.deltaTime);
-            }
+            transform.position = Vector3.MoveTowards(transform.position,wormi.position, speed * Time.deltaTime);
         }
+    }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Player")) 
+        {
+            follow = false;
+        }
     }
 }

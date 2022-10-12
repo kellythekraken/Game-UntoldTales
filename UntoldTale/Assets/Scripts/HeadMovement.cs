@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class HeadMovement : MonoBehaviour
 {
+    public static HeadMovement Instance;
     Camera mainCam;
     public float rotSpeed;
     public float moveSpeed;
@@ -12,11 +13,15 @@ public class HeadMovement : MonoBehaviour
     private Vector2 moveInput;
     public static bool move = true;
     TailMovement tailScript;
+    InputActionAsset input;
+
+    void Awake() => Instance = this;
     void Start()
     {
         mainCam = Camera.main;
         rb = GetComponent<Rigidbody2D>();
         tailScript = GetComponentInChildren<TailMovement>();
+        //input = GetComponent<PlayerInput>().
     }
 
     void FixedUpdate()
