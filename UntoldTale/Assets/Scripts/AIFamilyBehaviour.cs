@@ -4,26 +4,32 @@ using UnityEngine;
 
 public class AIFamilyBehaviour : MonoBehaviour
 {
-    public bool follow = true; //follow on startup, to create that start animation
+    bool follow = true; //follow on startup, to create that start animation
     public float speed;
     Transform wormi;
     Rigidbody2D rb;
-    Transform center;
+    float calculatedRadius;
+
     void Start()
     {
         wormi = HeadMovement.Instance.transform;
         rb = GetComponentInChildren<Rigidbody2D>();
-        center = rb.transform;
+        calculatedRadius = GetComponent<CircleCollider2D>().radius * 2 + 1;
     }
 
     void FixedUpdate()
     {
         if(follow)
         {
-            //Vector2 newPosition = Vector2.Lerp(center.position,wormi.position, speed * Time.deltaTime);
-            //rb.MovePosition(newPosition);
-
-            transform.position = Vector3.MoveTowards(transform.position,wormi.position, speed * Time.deltaTime);
+            if(Vector2.Distance(rb.position,wormi.position) > calculatedRadius)
+            {
+                Vector2 newPosition = Vector2.Lerp(rb.position,wormi.position, speed * Time.deltaTime);
+                rb.MovePosition(newPosition);
+            }
+            else{ follow = false;}
+            
+            //transform.position = Vector3.Lerp(transform.position,rb.position, speed * Time.deltaTime);
+            //transform.position = Vector3.MoveTowards(transform.position,wormi.position, speed * Time.deltaTime);
         }
     }
 
