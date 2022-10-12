@@ -88,7 +88,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.4522561, y: 2.1147668}
+  m_ConnectedAnchor: {x: 1.4522562, y: 2.1147673}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -108,7 +108,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.4909421, y: -2.5015228}
+  m_ConnectedAnchor: {x: 1.4909419, y: -2.501523}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -128,7 +128,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 2.9654238, y: 0.17802928}
+  m_ConnectedAnchor: {x: 2.965424, y: 0.1780293}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -221,7 +221,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.2602268, y: 2.4319477}
+  m_ConnectedAnchor: {x: 1.2602265, y: 2.431948}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -241,7 +241,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.345783, y: -2.3010216}
+  m_ConnectedAnchor: {x: 1.3457829, y: -2.3010218}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -261,7 +261,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -1.3030393, y: -2.3064413}
+  m_ConnectedAnchor: {x: -1.3030392, y: -2.3064413}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -354,7 +354,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.443482, y: 2.4850254}
+  m_ConnectedAnchor: {x: 1.4434817, y: 2.485025}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -374,7 +374,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.0360333, y: -2.6306798}
+  m_ConnectedAnchor: {x: 1.0360339, y: -2.6306794}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -394,7 +394,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -1.2053403, y: 2.479606}
+  m_ConnectedAnchor: {x: -1.2053404, y: 2.4796054}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -583,7 +583,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.4788775, y: 2.2178264}
+  m_ConnectedAnchor: {x: 1.4788778, y: 2.2178264}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -603,7 +603,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -2.6488223, y: -0.0054194443}
+  m_ConnectedAnchor: {x: -2.6488218, y: -0.005419438}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -686,7 +686,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c21069dae1813e14bb620afb1af53c3e, type: 3}
-  m_Color: {r: 0.8392157, g: 0.45193216, b: 0.34509805, a: 1}
+  m_Color: {r: 0.5471698, g: 0.24519402, b: 0.25678015, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -718,7 +718,7 @@ MonoBehaviour:
   - {fileID: 7553957264758791619}
   - {fileID: 7553957265257149351}
   m_Bounds:
-    m_Center: {x: 0.05458212, y: -0.12592602, z: 0}
+    m_Center: {x: 0.05458188, y: -0.1259265, z: 0}
     m_Extent: {x: 2.9550002, y: 2.963431, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -751,7 +751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ee0c36c1008ad478eb1219fc7b5173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  follow: 1
   speed: 1
 --- !u!1 &7553957266404659354
 GameObject:
@@ -841,7 +840,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.4699117, y: 2.4152026}
+  m_ConnectedAnchor: {x: 1.4699111, y: 2.4152026}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -861,7 +860,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.2943573, y: -2.2149334}
+  m_ConnectedAnchor: {x: 1.2943577, y: -2.2149336}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -974,7 +973,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.5870053, y: 2.441708}
+  m_ConnectedAnchor: {x: 1.5870056, y: 2.4417078}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -994,7 +993,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.2056032, y: -2.4594846}
+  m_ConnectedAnchor: {x: 1.2056037, y: -2.4594843}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -1014,7 +1013,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.4360309, y: -2.3001728}
+  m_ConnectedAnchor: {x: 1.4360309, y: -2.3001726}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
