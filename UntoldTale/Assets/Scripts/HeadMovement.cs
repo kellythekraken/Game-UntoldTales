@@ -21,7 +21,7 @@ public class HeadMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         tailScript = GetComponentInChildren<TailMovement>();
         playerInput = GetComponent<PlayerInput>().actions.FindActionMap("Player");
-        FreezeInput(1f);
+        FreezeInput(2f);
     }
 
     void FixedUpdate()
