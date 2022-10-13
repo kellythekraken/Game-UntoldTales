@@ -13,7 +13,8 @@ public class LevelManager : MonoBehaviour
     public float blobTotalCount, friendCount;
     public float familiarMeter = 0f;   //if this goes above 0.5, you could proceed to the next level
     Color startColor;
-
+    [SerializeField] Collider2D doorToPreviousRoom, doorToNextRoom;
+    
     void Start()
     {
         blobParent = transform.Find("Blobs");

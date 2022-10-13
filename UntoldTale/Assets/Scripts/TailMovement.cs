@@ -79,7 +79,7 @@ public class TailMovement : MonoBehaviour
     bool curlInCoolDown = false;
     IEnumerator SmoothCurl()
     {
-        wormi.DisableInput();
+        GameManager.Instance.DisableInput();
         segmentPoses[0] = targetDir.position;
 
         float x = 0;
@@ -102,7 +102,7 @@ public class TailMovement : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-        wormi.EnableInput();
+        GameManager.Instance.EnableInput();
         StartCoroutine(CurlCooldown());
         curlStarted = false;
     }

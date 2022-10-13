@@ -12,7 +12,6 @@ public class HeadMovement : MonoBehaviour
     private Vector2 moveInput;
     public bool move = true;
     TailMovement tailScript;
-    InputActionMap playerInput;
 
     void Awake() => Instance = this;
     void Start()
@@ -20,8 +19,6 @@ public class HeadMovement : MonoBehaviour
         mainCam = Camera.main;
         rb = GetComponent<Rigidbody2D>();
         tailScript = GetComponentInChildren<TailMovement>();
-        playerInput = GetComponent<PlayerInput>().actions.FindActionMap("Player");
-        FreezeInput(2f);
     }
 
     void FixedUpdate()
@@ -40,16 +37,5 @@ public class HeadMovement : MonoBehaviour
         if(moveInput == Vector2.zero) move = false;
         else{move = true;}
     }
-    public void FreezeInput(float freezeTime = 1f)
-    {
-        StartCoroutine(FreezeInputTimer(freezeTime));
-    }
-    IEnumerator FreezeInputTimer(float freezeTime)
-    {
-        playerInput.Disable();
-        yield return new WaitForSeconds(freezeTime);
-        playerInput.Enable();
-    }
-    public void EnableInput() => playerInput.Enable();
-    public void DisableInput() => playerInput.Disable();
+
 }

@@ -10,10 +10,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public UnityEvent GameStartEvent;
     [SerializeField] GameObject TitleCanvasUI;
-    [SerializeField] Button startBtn;
     [SerializeField] PlayerInput playerInput;
-    InputAction restartAction;
-
+    InputActionMap actionMap; 
+    InputAction restartAction, startGameAction;
+    bool gameStarted = false;
     void Awake()
     {
         if(GameStartEvent == null) GameStartEvent = new UnityEvent();
@@ -21,27 +21,40 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        startBtn.onClick.AddListener(()=>ShowTitleScreen());
-        InputActionMap map = playerInput.actions.FindActionMap("Player");
-        restartAction = map["Restart"];
+        actionMap = playerInput.actions.FindActionMap("Player");
+        restartAction = actionMap["Restart"];
+        startGameAction = actionMap["StartGame"];
         restartAction.performed += ReloadGame;
-    }
-    void OnEnable()
-    {
+        startGameAction.performed += HideTitleScreen;
+        actionMap.Enable();
         ShowTitleScreen(true);
     }
-    void OnDisable() => restartAction.performed -= ReloadGame;
+    void OnDisable()
+    {
+        restartAction.performed -= ReloadGame; 
+        actionMap.Disable();
+    }
     void ShowTitleScreen(bool show = false)
     {
-        if(show){
+        Debug.Log("show title screen " + show); 
+        if(show){   //start screen
             PauseGame();
             TitleCanvasUI.SetActive(true);
+            restartAction.Disable();
         }
-        else {
+        else {  //play
             ResumeGame();
             TitleCanvasUI.SetActive(false);
+            startGameAction.performed -= HideTitleScreen;
+            startGameAction.Disable();
+            restartAction.Enable();
             GameStartEvent.Invoke();
+            FreezeInput(2f);    //freeze player input on start up
         }
+    }
+    void HideTitleScreen(InputAction.CallbackContext ctx)
+    {
+        ShowTitleScreen(false);
     }
     void ReloadGame(InputAction.CallbackContext ctx)
     {
@@ -55,4 +68,19 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+
+#region PlayerInputControls
+    public void FreezeInput(float freezeTime = 1f)
+    {
+        StartCoroutine(FreezeInputTimer(freezeTime));
+    }
+    IEnumerator FreezeInputTimer(float freezeTime)
+    {
+        actionMap.Disable();
+        yield return new WaitForSeconds(freezeTime);
+        actionMap.Enable();
+    }
+    public void EnableInput() => actionMap.Enable();
+    public void DisableInput() => actionMap.Disable();
+#endregion
 }
