@@ -1,16 +1,24 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+    public UnityEvent GameStartEvent;
     [SerializeField] GameObject TitleCanvasUI;
     [SerializeField] Button startBtn;
     [SerializeField] PlayerInput playerInput;
     InputAction restartAction;
+
+    void Awake()
+    {
+        if(GameStartEvent == null) GameStartEvent = new UnityEvent();
+        Instance = this;
+    }
     void Start()
     {
         startBtn.onClick.AddListener(()=>ShowTitleScreen());
@@ -32,6 +40,7 @@ public class GameManager : MonoBehaviour
         else {
             ResumeGame();
             TitleCanvasUI.SetActive(false);
+            GameStartEvent.Invoke();
         }
     }
     void ReloadGame(InputAction.CallbackContext ctx)

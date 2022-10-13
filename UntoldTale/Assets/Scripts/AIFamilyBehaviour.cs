@@ -8,31 +8,35 @@ public class AIFamilyBehaviour : MonoBehaviour
     private AIBehaviour _behaviour;
     internal AIBehaviour Behaviour {get {return _behaviour;} set {_behaviour = value; ChangeAIBehaviour(value);} }
     [SerializeField] AIBehaviour startBehaviour;
-    bool follow = true; //follow on startup, to create that start animation
     public float speed;
     Transform wormi;
     Rigidbody2D rb;
     float calculatedRadius;
-    [SerializeField] float startForce;
+    [SerializeField] float defaultForce = 500f;
 
     void Start()
     {
         wormi = HeadMovement.Instance.transform;
         rb = GetComponentInChildren<Rigidbody2D>();
-
         calculatedRadius = transform.localScale.x * GetComponent<CircleCollider2D>().radius +0.5f;
-        follow = false;
-        ForceBehaviour(startForce);
+        GameManager.Instance.GameStartEvent.AddListener(GameStarInit);
+
     }
+    void GameStarInit()
+    {
+        ChangeAIBehaviour(startBehaviour);
+    }
+
     void ChangeAIBehaviour(AIBehaviour newBehaviour)
     {
+        Debug.Log("behaviour changed to " + newBehaviour);
         switch(newBehaviour)
         {
             case AIBehaviour.FORCE:
-                ForceBehaviour(startForce);
+                ForceBehaviour(defaultForce);
                 return;
             case AIBehaviour.FOLLOW:
-                 FollowBehaviour();
+                StartCoroutine(FollowBehaviour());
                 return;
             case AIBehaviour.FLOAT:
                 FloatBehaviour();
@@ -56,28 +60,29 @@ public class AIFamilyBehaviour : MonoBehaviour
     IEnumerator FollowBehaviour()
     {
         var timeElapsed = 0f;
-        while(timeElapsed<5f)
+        while(timeElapsed < 5f)
         {
-            timeElapsed += Time.deltaTime;
             if(Vector2.Distance(rb.position,wormi.position) > calculatedRadius)
             {
                 Vector2 newPosition = Vector2.Lerp(rb.position,wormi.position, speed * Time.deltaTime);
                 rb.MovePosition(newPosition);
             }
-            else {yield break;}
+            else{ yield break;}
 
+            timeElapsed += Time.deltaTime;
             yield return null;
         }
     }
     void FloatBehaviour()
     {
-        
+        //randomly move around, like a boil animation
     }
-    private void OnTriggerEnter2D(Collider2D other)
+
+    /*    private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Player")) 
         {
             follow = false;
         }
-    }
+    } */
 }

@@ -22,13 +22,11 @@ public class Befriendable : MonoBehaviour
         spriteSkin = GetComponent<SpriteSkin>();
         myCollider = GetComponent<Collider2D>();
         childObj = transform.GetChild(0).gameObject;
-
         spriteSkin.enabled = befriended;
         startColor = sprite.color;
         childObj.SetActive(false);
         startPosition = transform.position;
     }
-
 
     void Befriended()
     {
