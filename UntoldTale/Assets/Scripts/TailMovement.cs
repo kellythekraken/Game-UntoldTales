@@ -11,11 +11,13 @@ public class TailMovement : MonoBehaviour
     public Transform wiggleDir;
     public float targetDistance;
     public float smoothSpeed, curlSpeed;
+    HeadMovement wormi;
 
     public float wiggleSpeed,wiggleMagnitude;
 
     private void Start()
     {
+        wormi = HeadMovement.Instance;
         lineRenderer.positionCount = length;
         segmentPoses = new Vector3[length];
         segmentVelocity = new Vector3[length];
@@ -24,7 +26,7 @@ public class TailMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(!HeadMovement.move) return;
+        if(!wormi.move) return;
         //wiggleDir.localRotation = Quaternion.Euler(0,0,Mathf.Sin(Time.time * wiggleSpeed) * wiggleMagnitude);
         segmentPoses[0] = targetDir.position;
         for(int i = 1; i < length ; i++)
@@ -49,7 +51,6 @@ public class TailMovement : MonoBehaviour
 
     void ResetCurl()
     {
-        if(isCurling) return;
         segmentPoses[0] = targetDir.position;
 
         float x = 0;
@@ -62,21 +63,23 @@ public class TailMovement : MonoBehaviour
             segmentPoses[i] = new Vector3(x,y,0f) + segmentPoses[i-1];
         }
         lineRenderer.SetPositions(segmentPoses);
-        isCurling = true;
     }
     public float angleVal;
     public float xSpace, ySpace; // Space ySpaceetween the spirals
+    bool curlStarted; //avoid repeated coroutine call
     public void CurlUp()
     {
-        //stop movement input for like 2 seconds
-        if(!isCurling) StartCoroutine(SmoothCurl());
-
+        if(!curlInCoolDown && !curlStarted) 
+        {
+            curlStarted = true;
+            StartCoroutine(SmoothCurl());
+        }
    //     Vector3 targetPos = segmentPoses[i-1] + (segmentPoses[i] - segmentPoses[i-1]).normalized * targetDistance;
     }
-    public bool isCurling = false;
+    bool curlInCoolDown = false;
     IEnumerator SmoothCurl()
     {
-        isCurling = true;
+        wormi.DisableInput();
         segmentPoses[0] = targetDir.position;
 
         float x = 0;
@@ -99,6 +102,16 @@ public class TailMovement : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
+        wormi.EnableInput();
+        StartCoroutine(CurlCooldown());
+        curlStarted = false;
+    }
+
+    IEnumerator CurlCooldown()
+    {
+        curlInCoolDown = true;
+        yield return new WaitForSeconds(3f);
+        curlInCoolDown = false;
     }
     /*    IEnumerator SmoothCurl()
     {

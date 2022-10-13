@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class HeadMovement : MonoBehaviour
@@ -11,9 +10,9 @@ public class HeadMovement : MonoBehaviour
     private Vector2 direction;
     private Rigidbody2D rb;
     private Vector2 moveInput;
-    public static bool move = true;
+    public bool move = true;
     TailMovement tailScript;
-    InputActionAsset input;
+    InputActionMap playerInput;
 
     void Awake() => Instance = this;
     void Start()
@@ -21,20 +20,19 @@ public class HeadMovement : MonoBehaviour
         mainCam = Camera.main;
         rb = GetComponent<Rigidbody2D>();
         tailScript = GetComponentInChildren<TailMovement>();
-        //input = GetComponent<PlayerInput>().
+        playerInput = GetComponent<PlayerInput>().actions.FindActionMap("Player");
+        FreezeInput(1f);
     }
 
     void FixedUpdate()
     {
         if(!move) return;
-        //MoveToCursor();
         MoveFromInput();
     }
 
     void MoveFromInput()
     {
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
-        tailScript.isCurling = false;
     }
     void OnMove(InputValue value)
     {
@@ -42,20 +40,16 @@ public class HeadMovement : MonoBehaviour
         if(moveInput == Vector2.zero) move = false;
         else{move = true;}
     }
-
-    /*
-    void RotateToCursor()
+    public void FreezeInput(float freezeTime = 1f)
     {
-        direction = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float angle = Mathf.Atan2(direction.y,direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle,Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation,rotation,rotSpeed * Time.deltaTime);
+        StartCoroutine(FreezeInputTimer(freezeTime));
     }
-    
-    void MoveToCursor()
+    IEnumerator FreezeInputTimer(float freezeTime)
     {
-        Vector2 cursorPos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = Vector2.MoveTowards(transform.position,cursorPos,moveSpeed * Time.deltaTime);
+        playerInput.Disable();
+        yield return new WaitForSeconds(freezeTime);
+        playerInput.Enable();
     }
-    */
+    public void EnableInput() => playerInput.Enable();
+    public void DisableInput() => playerInput.Disable();
 }
