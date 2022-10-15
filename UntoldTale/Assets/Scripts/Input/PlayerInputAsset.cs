@@ -315,17 +315,6 @@ public partial class @PlayerInputAsset : IInputActionCollection2, IDisposable
                     ""action"": ""StartGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""73a4b77f-97e8-4d7c-aba9-dd35e4d9e1be"",
-                    ""path"": ""<Mouse>/press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""StartGame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },
