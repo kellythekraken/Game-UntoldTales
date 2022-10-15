@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9d287f9b-3597-49d1-9186-501d3739886a}">
+		<property name="assetPath">
+			<value>kalimba 6.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.2160000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{19a5f30c-23f3-4c9c-91cf-4192d31bd74c}</destination>
+		</relationship>
+	</object>
+</objects>

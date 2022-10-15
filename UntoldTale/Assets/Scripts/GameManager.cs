@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
     void ReloadGame(InputAction.CallbackContext ctx)
     {
        SceneManager.LoadScene(0);
+       //unload all other scenes?
     }
     void PauseGame ()
     {
@@ -69,6 +70,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadSceneAsync(sceneName,LoadSceneMode.Additive);
+    }
+    public void UnloadScene(string sceneName)
+    {
+        SceneManager.UnloadSceneAsync(sceneName);
+    }
 #region PlayerInputControls
     public void FreezeInput(float freezeTime = 1f)
     {
