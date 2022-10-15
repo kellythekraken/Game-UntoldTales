@@ -1268,6 +1268,7 @@ GameObject:
   - component: {fileID: 228726711}
   - component: {fileID: 228726710}
   - component: {fileID: 228726709}
+  - component: {fileID: 228726712}
   m_Layer: 0
   m_Name: Start Screen
   m_TagString: Untagged
@@ -1359,6 +1360,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &228726712
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228726707}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!4 &246844734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7553957265921096838, guid: f49a9bfb58452dc4a871740e5a6111a9, type: 3}

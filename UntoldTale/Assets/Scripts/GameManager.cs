@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     InputActionMap actionMap; 
     InputAction restartAction, startGameAction;
     bool gameStarted = false;
+    CanvasGroup startCanvas;
     void Awake()
     {
         if(GameStartEvent == null) GameStartEvent = new UnityEvent();
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
         restartAction.performed += ReloadGame;
         startGameAction.performed += HideTitleScreen;
         actionMap.Enable();
+        startCanvas = TitleCanvasUI.GetComponent<CanvasGroup>();
         ShowTitleScreen(true);
     }
     void OnDisable()
@@ -34,23 +36,47 @@ public class GameManager : MonoBehaviour
         restartAction.performed -= ReloadGame; 
         actionMap.Disable();
     }
+
+#region scene managing
     void ShowTitleScreen(bool show = false)
     {
-        Debug.Log("show title screen " + show); 
         if(show){   //start screen
             PauseGame();
-            TitleCanvasUI.SetActive(true);
+            StartCoroutine(FadeInScreen(startCanvas));
             restartAction.Disable();
         }
         else {  //play
-            ResumeGame();
-            TitleCanvasUI.SetActive(false);
+            StartCoroutine(FadeOutScreen(startCanvas));
             startGameAction.performed -= HideTitleScreen;
             startGameAction.Disable();
             restartAction.Enable();
             GameStartEvent.Invoke();
-            FreezeInput(2f);    //freeze player input on start up
+            FreezeInput(.7f);    //freeze player input on start up
+            ResumeGame();
         }
+    }
+
+    IEnumerator FadeOutScreen(CanvasGroup canvas,float lerpTime = 1f)  //disappear
+    {
+        float timeElapsed = 0f;
+        while(timeElapsed < 1f)
+        {
+            canvas.alpha = Mathf.Lerp(1,0,timeElapsed);
+            timeElapsed += Time.fixedDeltaTime;
+            yield return null;
+        }
+        TitleCanvasUI.SetActive(false);
+    }
+    IEnumerator FadeInScreen(CanvasGroup canvas, float lerpTime = 1f)   //appear
+    {
+        float timeElapsed = 0f;
+        while(timeElapsed < 1f)
+        {
+            canvas.alpha = Mathf.Lerp(0,1,timeElapsed);
+            timeElapsed += Time.fixedDeltaTime;
+            yield return null;
+        }
+        TitleCanvasUI.SetActive(true);
     }
     void HideTitleScreen(InputAction.CallbackContext ctx)
     {
@@ -78,6 +104,8 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(sceneName);
     }
+#endregion
+
 #region PlayerInputControls
     public void FreezeInput(float freezeTime = 1f)
     {
