@@ -5,10 +5,12 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
+
+//controls scene loading and restart
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public UnityEvent GameStartEvent;
+    internal UnityEvent GameStartEvent;
     [SerializeField] GameObject TitleCanvasUI;
     [SerializeField] PlayerInput playerInput;
     InputActionMap actionMap; 
@@ -98,14 +100,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadSceneAsync(sceneName,LoadSceneMode.Additive);
-    }
-    public void UnloadScene(string sceneName)
-    {
-        SceneManager.UnloadSceneAsync(sceneName);
-    }
 #endregion
 
 #region PlayerInputControls
