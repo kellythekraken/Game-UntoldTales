@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{4920b44f-3628-4814-8319-5eb7a81a310a}">
 		<property name="assetPath">
-			<value>BG_A Slow Tune for G - Franz Gordon(level).mp3</value>
+			<value>BGM/BG_A Slow Tune for G - Franz Gordon(level).mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

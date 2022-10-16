@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9090579369917462480
+--- !u!114 &-8504332982157852453
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,40 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Touch/MusicBox
+  m_Name: parameter:/Home/Befriended
   m_EditorClassIdentifier: 
-  Name: MusicBox
+  Name: Befriended
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0
+  Default: 1
   ID:
-    data1: 629364655
-    data2: 3801791601
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-8353700198284819391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Touch/Kalimba
-  m_EditorClassIdentifier: 
-  Name: Kalimba
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1217709907
-    data2: 1473558048
+    data1: 2271977830
+    data2: 4266201153
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -71,10 +47,12 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 4369353502865291408}
+  - {fileID: -8504332982157852453}
   MinDistance: 1
   MaxDistance: 20
-  Length: 157968
+  Length: 184776
 --- !u!114 &-6077457627170343001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,12 +95,12 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Background.bank
   Name: Background
   StudioPath: bank:/Background
-  lastModified: 638014750739262920
+  lastModified: 638015218429995095
   FileSizes:
   - Name: Desktop
-    Value: 11170912
+    Value: 11172928
   Exists: 1
---- !u!114 &-2900805443895738061
+--- !u!114 &-3044955133868564684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,24 +109,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/BGM/Level 1
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level 2/Tunnel
   m_EditorClassIdentifier: 
-  Path: event:/BGM/Level 1
-  Guid:
-    Data1: 1247673427
-    Data2: 1177963425
-    Data3: 1670543295
-    Data4: 5011339
-  Banks:
-  - {fileID: -3132890049782347035}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 184776
+  Name: Tunnel
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 835814604
+    data2: 2277899101
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-1905578394925603274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,38 +139,11 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638014750739806142
+  lastModified: 638015218431455011
   FileSizes:
   - Name: Desktop
-    Value: 370848
+    Value: 668416
   Exists: 1
---- !u!114 &-1750597358137217264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Arrival
-  m_EditorClassIdentifier: 
-  Path: event:/Arrival
-  Guid:
-    Data1: 1885442985
-    Data2: 1136139248
-    Data3: 1353572252
-    Data4: 1717414002
-  Banks:
-  - {fileID: -1905578394925603274}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3096
 --- !u!114 &-179976253973065402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +167,8 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -3044955133868564684}
   MinDistance: 1
   MaxDistance: 20
   Length: 177696
@@ -241,20 +190,19 @@ MonoBehaviour:
   - {fileID: -3132890049782347035}
   - {fileID: -1905578394925603274}
   EditorEvents:
-  - {fileID: -1750597358137217264}
   - {fileID: 2234949126624696055}
   - {fileID: -6077457627170343001}
   - {fileID: 7227276433249968142}
-  - {fileID: -2900805443895738061}
   - {fileID: -179976253973065402}
   - {fileID: 5109205139867768123}
   - {fileID: -6233176452229193170}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: 6515488625429240082}
   MasterBanks:
   - {fileID: 3391148819787967567}
   StringsBanks:
   - {fileID: 54646594993677441}
-  cacheTime: 638014750739806142
+  cacheTime: 638015218431455011
   cacheVersion: 131593
 --- !u!114 &54646594993677441
 MonoBehaviour:
@@ -271,10 +219,10 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638014750665019693
+  lastModified: 638015218430155176
   FileSizes:
   - Name: Desktop
-    Value: 1244
+    Value: 1266
   Exists: 1
 --- !u!114 &2234949126624696055
 MonoBehaviour:
@@ -300,11 +248,10 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -8353700198284819391}
-  - {fileID: -9090579369917462480}
+  - {fileID: 5114774865256925105}
   MinDistance: 1
   MaxDistance: 20
-  Length: 1050
+  Length: 980
 --- !u!114 &3391148819787967567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,10 +267,34 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638014750664949718
+  lastModified: 638015218430105025
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 1218
+  Exists: 1
+--- !u!114 &4369353502865291408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Home/Tunnel
+  m_EditorClassIdentifier: 
+  Name: Tunnel
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 835814604
+    data2: 2277899101
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &5109205139867768123
 MonoBehaviour:
@@ -352,6 +323,84 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 146640
+--- !u!114 &5114774865256925105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Touch/InstrumentType
+  m_EditorClassIdentifier: 
+  Name: InstrumentType
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 1608432703
+    data2: 1191924287
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Kalimba
+  - MusicBox
+  - Xylophone
+  - Piano
+  - Flute
+  - Guitar
+  Exists: 1
+--- !u!114 &6515488625429240082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tunnel
+  m_EditorClassIdentifier: 
+  Name: Tunnel
+  StudioPath: parameter:/Tunnel
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 835814604
+    data2: 2277899101
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6619491594196833431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/HomeReturn/Tunnel
+  m_EditorClassIdentifier: 
+  Name: Tunnel
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 835814604
+    data2: 2277899101
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &7227276433249968142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +424,8 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 6619491594196833431}
   MinDistance: 1
   MaxDistance: 20
   Length: 193848

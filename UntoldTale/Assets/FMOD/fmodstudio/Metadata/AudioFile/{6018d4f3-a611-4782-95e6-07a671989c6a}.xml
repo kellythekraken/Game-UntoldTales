@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{6018d4f3-a611-4782-95e6-07a671989c6a}">
 		<property name="assetPath">
-			<value>ES_Music Box Swan Lake Single Notes 32 - SFX Producer.mp3</value>
+			<value>OneNote/ES_Music Box Swan Lake Single Notes 32 - SFX Producer.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

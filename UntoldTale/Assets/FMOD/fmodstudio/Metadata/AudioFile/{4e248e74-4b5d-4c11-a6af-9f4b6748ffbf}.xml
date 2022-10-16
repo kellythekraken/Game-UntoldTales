@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{4e248e74-4b5d-4c11-a6af-9f4b6748ffbf}">
 		<property name="assetPath">
-			<value>BG_Days of Healing - Franz Gordon(home departure).mp3</value>
+			<value>BGM/BG_Days of Healing - Franz Gordon(home departure).mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

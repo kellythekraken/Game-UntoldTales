@@ -63,4 +63,10 @@ public class AudioManager : MonoBehaviour
 			if(result == path) { i.release(); unreleasedSounds.Remove(i); return;}
 		}
 	}
+	//trigger: use fmod studio parameter trigger
+	//instance.setParameterByName("Pitch", 1f);
+
+		//GLOBAL PARAMETER:
+	//studio global parameter trigger
+	//FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EQ Global", eq);
 }

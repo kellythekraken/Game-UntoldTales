@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{de321205-052e-4709-9f12-ec025f5215e3}">
 		<property name="assetPath">
-			<value>BG_Letters - Ever So Blue(coming home).mp3</value>
+			<value>BGM/BG_Letters - Ever So Blue(coming home).mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

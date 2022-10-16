@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{812761a4-1167-4fa9-b585-48e8a36257ea}">
+		<property name="assetPath">
+			<value>Arrival/Music_Piano Fill - SFX Producer.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.2000000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{19a5f30c-23f3-4c9c-91cf-4192d31bd74c}</destination>
+		</relationship>
+	</object>
+</objects>

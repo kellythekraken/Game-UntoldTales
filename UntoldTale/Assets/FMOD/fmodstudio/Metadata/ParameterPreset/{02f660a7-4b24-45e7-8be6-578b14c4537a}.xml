@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{02f660a7-4b24-45e7-8be6-578b14c4537a}">
+		<property name="name">
+			<value>Befriended</value>
+		</property>
+		<relationship name="folder">
+			<destination>{adc46c5f-33db-4145-89e1-79835b44877d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{71ecf466-c274-4a72-86e6-d883dbf26548}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{71ecf466-c274-4a72-86e6-d883dbf26548}">
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+	</object>
+</objects>

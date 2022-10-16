@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{54538136-bd4c-43f0-b173-7ce19613753e}">
 		<property name="assetPath">
-			<value>BG_To Let Go - Anna Landstrom(level).mp3</value>
+			<value>BGM/BG_To Let Go - Anna Landstrom(level).mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

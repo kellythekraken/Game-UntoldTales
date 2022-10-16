@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{3a6e61d4-5b16-4f25-8178-73d3b68d476e}">
 		<property name="assetPath">
-			<value>BG_The Trick (Instrumental Version) - Sleepaway Camp.mp3</value>
+			<value>BGM/BG_The Trick (Instrumental Version) - Sleepaway Camp.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
