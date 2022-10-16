@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
     public float blobTotalCount, friendCount;
     public float familiarMeter = 0f;   //if this goes above 0.5, you could proceed to the next level
     Color startColor;
-    [SerializeField] Collider2D doorToPreviousRoom, doorToNextRoom;
+    [SerializeField] GameObject doorToPreviousRoom, doorToNextRoom;
     
     void Start()
     {
@@ -27,7 +27,8 @@ public class LevelManager : MonoBehaviour
         blobTotalCount = blobLists.Count;
         friendCount = 0f;
         startColor = levelBackground.color;
-
+        doorToPreviousRoom.SetActive(false);
+        
         AudioManager.Instance.AddToBGMEventList(levelName, sceneBGMEmitter);
     }
 

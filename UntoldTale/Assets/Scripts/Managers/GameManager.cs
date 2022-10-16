@@ -7,6 +7,8 @@ using UnityEngine.Events;
 
 // do next: sound touchy effect > get sound after befriended
 /* 
+    //stop at level 1!!
+
     complete the AI behaviour: 
         - strong sticking
         - family should make a way for you to go after hugging you
@@ -57,6 +59,7 @@ public class GameManager : MonoBehaviour
             restartAction.Disable();
         }
         else {  //play
+            Debug.Log("fade out start");
             StartCoroutine(FadeOutScreen(startCanvas));
             startGameAction.performed -= HideTitleScreen;
             startGameAction.Disable();
@@ -70,22 +73,24 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FadeOutScreen(CanvasGroup canvas,float lerpTime = 1f)  //disappear
     {
+        Debug.Log("start lerping screen");
         float timeElapsed = 0f;
-        while(timeElapsed < 1f)
+        while(timeElapsed < .5f)
         {
-            canvas.alpha = Mathf.Lerp(1,0,timeElapsed);
+            canvas.alpha = Mathf.Lerp(1,0,timeElapsed/ 0.5f);
             timeElapsed += Time.fixedDeltaTime;
             yield return null;
         }
+        Debug.Log("finish lerping screen");
         TitleCanvasUI.SetActive(false);
     }
     IEnumerator FadeInScreen(CanvasGroup canvas, float lerpTime = 1f)   //appear
     {
         float timeElapsed = 0f;
-        while(timeElapsed < 1f)
+        while(timeElapsed < .5f)
         {
-            canvas.alpha = Mathf.Lerp(0,1,timeElapsed);
             timeElapsed += Time.fixedDeltaTime;
+            canvas.alpha = Mathf.Lerp(0,1,timeElapsed / 0.5f);
             yield return null;
         }
         TitleCanvasUI.SetActive(true);
@@ -97,7 +102,6 @@ public class GameManager : MonoBehaviour
     void ReloadGame(InputAction.CallbackContext ctx)
     {
        SceneManager.LoadScene(0);
-       //unload all other scenes?
     }
     void PauseGame ()
     {
@@ -107,7 +111,18 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
     }
-
+    /*
+    IEnumerator StartButtonAnimation()
+    {
+        //lerp button alpha from 0 to 1
+        float timeElapsed =0f;
+        while(timeElapsed<1f)
+        {
+            startBtnCanvas.alpha = Mathf.Lerp(0f,1f,timeElapsed);
+            timeElapsed += Time.fixedDeltaTime;
+            yield return null;
+        }
+    } */
 #endregion
 
 #region PlayerInputControls
