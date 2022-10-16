@@ -12,6 +12,12 @@ public struct LabeledEventEmitter
 {
 	public string _name;
 	public StudioEventEmitter eventEmitter;
+
+	public LabeledEventEmitter(string name, StudioEventEmitter emitter)
+	{
+		_name = name;
+		eventEmitter = emitter;
+	}
 }
 
 public class AudioManager : MonoBehaviour
@@ -20,14 +26,12 @@ public class AudioManager : MonoBehaviour
 	public EventReference eventPath;
 	List<FMOD.Studio.EventInstance> unreleasedSounds;
 	public List<LabeledEventEmitter> BGMEventEmitters;
-	string currentPlayingBGM;
+	public string currentPlayingBGM;
 
 	void Awake() => Instance = this;
 	void Start()
 	{
 		unreleasedSounds = new List<FMOD.Studio.EventInstance>();
-		//PlaySound("BGM/Home");
-		//StopSound("Arrival");
 	}
 
 	void OnDisable()
@@ -40,6 +44,12 @@ public class AudioManager : MonoBehaviour
 		RuntimeManager.PlayOneShot(path);
 	}
 
+	public void AddToBGMEventList(string name, StudioEventEmitter emitter)
+	{
+		LabeledEventEmitter newEvent = new LabeledEventEmitter(name, emitter);
+		BGMEventEmitters.Add(newEvent);
+	}
+
 	public void PlayBGM(string eventName)
 	{
 		if(currentPlayingBGM == eventName) return;
@@ -49,7 +59,7 @@ public class AudioManager : MonoBehaviour
 		emitter.eventEmitter.Play();
 		currentPlayingBGM = eventName;
 		return;
-		
+
 		var path = "event:/" + eventName;
 		//maybe instantiate an event emitter and add to list.
 		FMOD.Studio.EventInstance soundEvent = RuntimeManager.CreateInstance(path);

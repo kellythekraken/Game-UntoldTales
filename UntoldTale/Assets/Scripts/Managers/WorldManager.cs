@@ -18,8 +18,7 @@ public class WorldManager : MonoBehaviour
 
     public void InitWorld()
     {
-        LoadScene("Home");
-        LoadScene("Level_1");
+        //LoadScene("Level_1");
     }
 
     public void ReloadGame()

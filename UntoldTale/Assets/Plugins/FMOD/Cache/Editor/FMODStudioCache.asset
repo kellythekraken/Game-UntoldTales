@@ -24,30 +24,6 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-8504332982157852453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Home/Befriended
-  m_EditorClassIdentifier: 
-  Name: Befriended
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0.005
-  ID:
-    data1: 2271977830
-    data2: 4266201153
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-6233176452229193170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,10 +49,9 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 4369353502865291408}
-  - {fileID: -8504332982157852453}
   MinDistance: 1
   MaxDistance: 20
-  Length: 184776
+  Length: 166000
 --- !u!114 &-6077457627170343001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,10 +118,10 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Background.bank
   Name: Background
   StudioPath: bank:/Background
-  lastModified: 638015380745091811
+  lastModified: 638015482594562725
   FileSizes:
   - Name: Desktop
-    Value: 11176288
+    Value: 11175200
   Exists: 1
 --- !u!114 &-3044955133868564684
 MonoBehaviour:
@@ -187,7 +162,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638015380760199645
+  lastModified: 638015482610991752
   FileSizes:
   - Name: Desktop
     Value: 668416
@@ -251,7 +226,7 @@ MonoBehaviour:
   - {fileID: 3391148819787967567}
   StringsBanks:
   - {fileID: 54646594993677441}
-  cacheTime: 638015380760199645
+  cacheTime: 638015482610991752
   cacheVersion: 131593
 --- !u!114 &54646594993677441
 MonoBehaviour:
@@ -268,7 +243,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638015380746212692
+  lastModified: 638015482595085598
   FileSizes:
   - Name: Desktop
     Value: 1298
@@ -316,7 +291,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638015380746172708
+  lastModified: 638015482594890918
   FileSizes:
   - Name: Desktop
     Value: 1882304

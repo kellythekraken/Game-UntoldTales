@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 //attatched to each level parent
 //check how familiar you have became
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] string levelName;
+    [SerializeField] FMODUnity.StudioEventEmitter sceneBGMEmitter;
     [SerializeField] Color levelTrueColor;
     SpriteRenderer levelBackground,tunnelBackground;
     Transform blobParent;
@@ -24,6 +27,8 @@ public class LevelManager : MonoBehaviour
         blobTotalCount = blobLists.Count;
         friendCount = 0f;
         startColor = levelBackground.color;
+
+        AudioManager.Instance.AddToBGMEventList(levelName, sceneBGMEmitter);
     }
 
     void InitializeList()
