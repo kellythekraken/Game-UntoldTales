@@ -23,7 +23,6 @@ public struct LabeledEventEmitter
 public class AudioManager : MonoBehaviour
 {
 	public static AudioManager Instance;
-	public EventReference eventPath;
 	List<FMOD.Studio.EventInstance> unreleasedSounds;
 	public List<LabeledEventEmitter> BGMEventEmitters;
 	public string currentPlayingBGM;

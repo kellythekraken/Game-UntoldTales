@@ -16,9 +16,8 @@ public class LoadSceneTrigger : MonoBehaviour
     }    
     //when scenes are loaded: 
     /*
-        - objects go back to original place
+        - (home) objects go back to original place
         - unload scenes
-        - add bgm object to audiomanager
     */
     void SceneTransition()
     {

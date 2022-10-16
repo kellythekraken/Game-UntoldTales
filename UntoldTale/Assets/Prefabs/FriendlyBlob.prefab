@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7553957264753406755}
   - component: {fileID: 7553957264753406752}
   - component: {fileID: 7553957264753406753}
+  - component: {fileID: 8388642540792868944}
+  - component: {fileID: 6940717444547974629}
   m_Layer: 0
   m_Name: bone_4
   m_TagString: Untagged
@@ -133,6 +135,57 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 3
+--- !u!114 &8388642540792868944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553957264753406759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -569997884
+      Data2: 1121633573
+      Data3: -927525729
+      Data4: 321271504
+    Path: event:/Touch
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: InstrumentType
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &6940717444547974629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553957264753406759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f85fcd6103826409d564b9648d3b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &7553957264758791616
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +200,8 @@ GameObject:
   - component: {fileID: 7553957264758791628}
   - component: {fileID: 7553957264758791629}
   - component: {fileID: 7553957264758791618}
+  - component: {fileID: 4938582490576474692}
+  - component: {fileID: 2796367746948788178}
   m_Layer: 0
   m_Name: bone_14
   m_TagString: Untagged
@@ -266,6 +321,57 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 3
+--- !u!114 &4938582490576474692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553957264758791616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -569997884
+      Data2: 1121633573
+      Data3: -927525729
+      Data4: 321271504
+    Path: event:/Touch
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: InstrumentType
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &2796367746948788178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553957264758791616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f85fcd6103826409d564b9648d3b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &7553957265009947743
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +386,8 @@ GameObject:
   - component: {fileID: 7553957265009947739}
   - component: {fileID: 7553957265009947736}
   - component: {fileID: 7553957265009947737}
+  - component: {fileID: 3645980717737763545}
+  - component: {fileID: 1150615361902987685}
   m_Layer: 0
   m_Name: bone_7
   m_TagString: Untagged
@@ -399,6 +507,57 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 3
+--- !u!114 &3645980717737763545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553957265009947743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f85fcd6103826409d564b9648d3b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+--- !u!114 &1150615361902987685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553957265009947743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -569997884
+      Data2: 1121633573
+      Data3: -927525729
+      Data4: 321271504
+    Path: event:/Touch
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: InstrumentType
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7553957265257149348
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +648,8 @@ GameObject:
   - component: {fileID: 7553957265884188739}
   - component: {fileID: 7553957265884188736}
   - component: {fileID: 7553957265884188737}
+  - component: {fileID: 1146074407444740429}
+  - component: {fileID: 8944612143151356225}
   m_Layer: 0
   m_Name: bone_2
   m_TagString: Untagged
@@ -608,6 +769,57 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 3
+--- !u!114 &1146074407444740429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553957265884188743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f85fcd6103826409d564b9648d3b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+--- !u!114 &8944612143151356225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553957265884188743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -569997884
+      Data2: 1121633573
+      Data3: -927525729
+      Data4: 321271504
+    Path: event:/Touch
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: InstrumentType
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7553957265921096839
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +963,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ee0c36c1008ad478eb1219fc7b5173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.4
+  startBehaviour: 0
+  followSpeed: 0
+  defaultForce: 500
 --- !u!1 &7553957266404659354
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +980,8 @@ GameObject:
   - component: {fileID: 7553957266404659366}
   - component: {fileID: 7553957266404659367}
   - component: {fileID: 7553957266404659364}
+  - component: {fileID: 7954207097977901352}
+  - component: {fileID: 3634107088253723387}
   m_Layer: 0
   m_Name: bone_3
   m_TagString: Untagged
@@ -885,6 +1101,57 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 3
+--- !u!114 &7954207097977901352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553957266404659354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f85fcd6103826409d564b9648d3b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+--- !u!114 &3634107088253723387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553957266404659354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -569997884
+      Data2: 1121633573
+      Data3: -927525729
+      Data4: 321271504
+    Path: event:/Touch
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: InstrumentType
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7553957266466635147
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +1166,8 @@ GameObject:
   - component: {fileID: 7553957266466635159}
   - component: {fileID: 7553957266466635156}
   - component: {fileID: 7553957266466635157}
+  - component: {fileID: 3491970757249254613}
+  - component: {fileID: 3209221181912034124}
   m_Layer: 0
   m_Name: bone_11
   m_TagString: Untagged
@@ -1018,3 +1287,54 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 3
+--- !u!114 &3491970757249254613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553957266466635147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -569997884
+      Data2: 1121633573
+      Data3: -927525729
+      Data4: 321271504
+    Path: event:/Touch
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: InstrumentType
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &3209221181912034124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553957266466635147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f85fcd6103826409d564b9648d3b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
