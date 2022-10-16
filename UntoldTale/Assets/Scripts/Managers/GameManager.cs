@@ -52,7 +52,8 @@ public class GameManager : MonoBehaviour
             restartAction.Enable();
             GameStartEvent.Invoke();
             FreezeInput(.7f);    //freeze player input on start up
-            AudioManager.Instance.PlaySound("BGM/Home");
+            AudioManager.Instance.ReleaseAllSound();
+            AudioManager.Instance.PlayBGM("Home");
             ResumeGame();
         }
     }

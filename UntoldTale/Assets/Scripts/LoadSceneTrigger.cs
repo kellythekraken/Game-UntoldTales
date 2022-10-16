@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//load the next area scene when you're in the tunnel
 public class LoadSceneTrigger : MonoBehaviour
 {
     [SerializeField] string[] sceneToLoad;

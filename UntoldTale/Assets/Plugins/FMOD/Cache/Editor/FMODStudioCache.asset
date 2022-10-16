@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8582979779967074309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level 1/Tunnel
+  m_EditorClassIdentifier: 
+  Name: Tunnel
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 835814604
+    data2: 2277899101
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-8504332982157852453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,7 +40,7 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 1
+  Default: 0.005
   ID:
     data1: 2271977830
     data2: 4266201153
@@ -80,6 +104,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 54073
+--- !u!114 &-3563816123090798069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level 1/Befriended
+  m_EditorClassIdentifier: 
+  Name: Befriended
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0.005
+  ID:
+    data1: 2271977830
+    data2: 4266201153
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-3132890049782347035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,10 +143,10 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Background.bank
   Name: Background
   StudioPath: bank:/Background
-  lastModified: 638015224893564961
+  lastModified: 638015380745091811
   FileSizes:
   - Name: Desktop
-    Value: 11173088
+    Value: 11176288
   Exists: 1
 --- !u!114 &-3044955133868564684
 MonoBehaviour:
@@ -139,7 +187,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638015224903089131
+  lastModified: 638015380760199645
   FileSizes:
   - Name: Desktop
     Value: 668416
@@ -196,13 +244,14 @@ MonoBehaviour:
   - {fileID: -179976253973065402}
   - {fileID: 5109205139867768123}
   - {fileID: -6233176452229193170}
+  - {fileID: 8580521620159670240}
   EditorParameters:
   - {fileID: 6515488625429240082}
   MasterBanks:
   - {fileID: 3391148819787967567}
   StringsBanks:
   - {fileID: 54646594993677441}
-  cacheTime: 638015224903089131
+  cacheTime: 638015380760199645
   cacheVersion: 131593
 --- !u!114 &54646594993677441
 MonoBehaviour:
@@ -219,10 +268,10 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638015224893635001
+  lastModified: 638015380746212692
   FileSizes:
   - Name: Desktop
-    Value: 1266
+    Value: 1298
   Exists: 1
 --- !u!114 &2234949126624696055
 MonoBehaviour:
@@ -267,10 +316,10 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638015224893604958
+  lastModified: 638015380746172708
   FileSizes:
   - Name: Desktop
-    Value: 1218
+    Value: 1882304
   Exists: 1
 --- !u!114 &4369353502865291408
 MonoBehaviour:
@@ -283,6 +332,30 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Home/Tunnel
+  m_EditorClassIdentifier: 
+  Name: Tunnel
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 835814604
+    data2: 2277899101
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &4438775945886093639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level 3/Tunnel
   m_EditorClassIdentifier: 
   Name: Tunnel
   StudioPath: 
@@ -310,16 +383,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/BGM/Level 3
   Guid:
-    Data1: -1728922182
-    Data2: 1180192584
-    Data3: -536461637
-    Data4: 1830218665
+    Data1: -882962642
+    Data2: 1082182377
+    Data3: 227805058
+    Data4: -1362013061
   Banks:
   - {fileID: -3132890049782347035}
+  - {fileID: 3391148819787967567}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 4438775945886093639}
   MinDistance: 1
   MaxDistance: 20
   Length: 146640
@@ -429,3 +504,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 193848
+--- !u!114 &8580521620159670240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/Level 1
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/Level 1
+  Guid:
+    Data1: -1710545507
+    Data2: 1309845010
+    Data3: 1393549243
+    Data4: 229431656
+  Banks:
+  - {fileID: -3132890049782347035}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8582979779967074309}
+  - {fileID: -3563816123090798069}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 184776
