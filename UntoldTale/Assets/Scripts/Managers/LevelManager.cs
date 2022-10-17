@@ -50,8 +50,8 @@ public class LevelManager : MonoBehaviour
         familiarMeter = friendCount / blobTotalCount;
         //gradually warm up the color
         StartCoroutine(BackgroundColorTransition());
-        Debug.Log("set parameter to " + familiarMeter);
-        AudioManager.Instance.SetLocalParam(levelName,"Familiarity",.8f);
+        AudioManager.Instance.SetGlobalParam("Familiarity", familiarMeter);
+        //AudioManager.Instance.SetLocalParam(levelName,"Familiarity",1f);
         //check if you could proceed to next level
         if(familiarMeter>=0.5f) Debug.Log("proceed to next level!");
     }

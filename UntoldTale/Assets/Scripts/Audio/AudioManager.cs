@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 
-//Audio to do:  1. exhaustion parameter | 2. befriend parameter | 3. befriend sound
+//Audio to do:  2. befriend parameter
 
 public enum ParamType{ CONTINUOUS, LABEL}
 public enum AudioControlType{ PARAMETER,SONGSWITCH}
@@ -97,7 +97,7 @@ public class AudioManager : MonoBehaviour
 	public void SetLocalParam(string eventName, string paramName, float newValue)
 	{
 		var emitter = FindEmitterByName(eventName);
-
+		Debug.Log("IS playing? " + emitter.IsPlaying());
 		foreach(var i in emitter.Params)
 		{
 			if (i.Name == paramName)

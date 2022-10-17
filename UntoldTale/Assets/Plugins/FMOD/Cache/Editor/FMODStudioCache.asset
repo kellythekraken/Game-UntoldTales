@@ -146,7 +146,7 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0
+  Default: 1
   ID:
     data1: 1434171982
     data2: 3662490646
@@ -175,7 +175,7 @@ MonoBehaviour:
     data1: 2271977830
     data2: 4266201153
   Type: 0
-  IsGlobal: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-3132890049782347035
@@ -193,10 +193,10 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Background.bank
   Name: Background
   StudioPath: bank:/Background
-  lastModified: 638016272995395880
+  lastModified: 638016310676364630
   FileSizes:
   - Name: Desktop
-    Value: 16337568
+    Value: 16337984
   Exists: 1
 --- !u!114 &-3044955133868564684
 MonoBehaviour:
@@ -218,6 +218,30 @@ MonoBehaviour:
   ID:
     data1: 835814604
     data2: 2277899101
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-2681180005370572314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Familiarity
+  m_EditorClassIdentifier: 
+  Name: Familiarity
+  StudioPath: parameter:/Familiarity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2271977830
+    data2: 4266201153
   Type: 0
   IsGlobal: 1
   Labels: []
@@ -269,7 +293,7 @@ MonoBehaviour:
   StudioPath: parameter:/Energy
   Min: 0
   Max: 1
-  Default: 0
+  Default: 1
   ID:
     data1: 1434171982
     data2: 3662490646
@@ -292,7 +316,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638016272997235894
+  lastModified: 638016310677984124
   FileSizes:
   - Name: Desktop
     Value: 1094208
@@ -355,11 +379,12 @@ MonoBehaviour:
   EditorParameters:
   - {fileID: 6515488625429240082}
   - {fileID: -2238488156954673888}
+  - {fileID: -2681180005370572314}
   MasterBanks:
   - {fileID: 3391148819787967567}
   StringsBanks:
   - {fileID: 54646594993677441}
-  cacheTime: 638016272997235894
+  cacheTime: 638016310677984124
   cacheVersion: 131593
 --- !u!114 &54646594993677441
 MonoBehaviour:
@@ -376,7 +401,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638016272996185873
+  lastModified: 638016310677044225
   FileSizes:
   - Name: Desktop
     Value: 1386
@@ -424,10 +449,10 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638016272996146114
+  lastModified: 638016310677014252
   FileSizes:
   - Name: Desktop
-    Value: 7044384
+    Value: 7044800
   Exists: 1
 --- !u!114 &3443332355111173209
 MonoBehaviour:
@@ -450,7 +475,7 @@ MonoBehaviour:
     data1: 2271977830
     data2: 4266201153
   Type: 0
-  IsGlobal: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &4369353502865291408
@@ -576,7 +601,7 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0
+  Default: 1
   ID:
     data1: 1434171982
     data2: 3662490646

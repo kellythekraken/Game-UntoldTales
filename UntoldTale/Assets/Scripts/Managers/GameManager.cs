@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
             restartAction.Disable();
         }
         else {  //play
-            Debug.Log("fade out start");
             StartCoroutine(FadeOutScreen(startCanvas));
             startGameAction.performed -= HideTitleScreen;
             startGameAction.Disable();
