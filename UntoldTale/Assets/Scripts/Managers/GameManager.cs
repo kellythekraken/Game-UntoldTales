@@ -5,18 +5,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
-// do next: sound touchy effect > get sound after befriended
-/* 
-    //stop at level 1!!
-
-    complete the AI behaviour: 
-        - strong sticking
-        - family should make a way for you to go after hugging you
-        - friend come greet you when you're leaving, and stuff the exit after you're gone
-        - friend turn a bit blue when you're leaving
-*/
-
-
 //controls scene loading and restart
 public class GameManager : MonoBehaviour
 {

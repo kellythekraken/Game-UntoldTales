@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b8d53d52-e3e7-43af-8194-606da7e43b4e}">
+		<property name="assetPath">
+			<value>Musical_SFX/Music_Piano Arpeggio 10 - SFX Producer.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.7119999999999997</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{19a5f30c-23f3-4c9c-91cf-4192d31bd74c}</destination>
+		</relationship>
+	</object>
+</objects>

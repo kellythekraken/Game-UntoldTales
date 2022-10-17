@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class AIFriendBehaviour : MonoBehaviour
 {
+    //behaviours:
+    // do next: sound touchy effect > get sound after befriended
+/* 
+    //stop at level 1!!
+
+    complete the AI behaviour: 
+        - friend come greet you when you're leaving, and stuff the exit after you're gone
+        - friend turn a bit blue when you're leaving
+*/
     public enum AIBehaviour{FORCE, FOLLOW, FLOAT, NOTHING};
     public bool animateOnGameStart = false;
     private AIBehaviour _behaviour;
