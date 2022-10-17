@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 
-//Audio to do:  2. befriend parameter
-
 public enum ParamType{ CONTINUOUS, LABEL}
 public enum AudioControlType{ PARAMETER,SONGSWITCH}
 public enum ParamScope{ LOCAL, GLOBAL}
@@ -27,7 +25,7 @@ public class AudioManager : MonoBehaviour
 	public static AudioManager Instance;
 	List<FMOD.Studio.EventInstance> unreleasedSounds;
 	public List<LabeledEventEmitter> BGMEventEmitters;
-	public string currentPlayingBGM;
+	internal string currentPlayingBGM;
 
 	void Awake() => Instance = this;
 	void Start()

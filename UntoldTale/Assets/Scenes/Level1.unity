@@ -238,6 +238,7 @@ Transform:
   - {fileID: 566023315}
   - {fileID: 2043348677}
   - {fileID: 1149330842}
+  - {fileID: 557810897}
   m_Father: {fileID: 977713251}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1219,6 +1220,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &557810896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557810897}
+  - component: {fileID: 557810899}
+  - component: {fileID: 557810898}
+  m_Layer: 0
+  m_Name: Leaving_ZoneTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &557810897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557810896}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 53, y: -3.9, z: 0}
+  m_LocalScale: {x: 11.094, y: 14.006175, z: 11.094}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 24994846}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &557810898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557810896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b95030326de744983ee667e9241cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 977713252}
+--- !u!58 &557810899
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557810896}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.49999997
 --- !u!1 &559144871
 GameObject:
   m_ObjectHideFlags: 0
@@ -2332,6 +2395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fa818cb88dfa94e9c127ea9b80a3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLeaving: 0
   levelName: Level1
   sceneBGMEmitter: {fileID: 1457731610}
   levelTrueColor: {r: 0, g: 0.6509434, b: 0.6509434, a: 1}

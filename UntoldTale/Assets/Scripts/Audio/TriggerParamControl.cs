@@ -10,7 +10,6 @@ public class TriggerParamControl : MonoBehaviour
     [SerializeField] [Range(0,1f)] float fadeFrom;
     [SerializeField] [Range(0,1f)] float fadeTo;
 
-
     void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.CompareTag("Player"))

@@ -23,7 +23,6 @@
 			<destination>{b8fa8b77-c4e9-4f8f-9ce6-2237aa0cc4d8}</destination>
 		</relationship>
 		<relationship name="markerTracks">
-			<destination>{711bf238-d229-4300-b813-323140be8460}</destination>
 			<destination>{dcb42a60-08d4-47d1-a7e6-41233654de6c}</destination>
 			<destination>{3d36dbcd-0e70-4a9e-b324-c7ba1ad572f5}</destination>
 			<destination>{3714a4b0-96b9-4af6-9b0d-ed69b9d6e9e4}</destination>
@@ -74,7 +73,6 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{b8fa8b77-c4e9-4f8f-9ce6-2237aa0cc4d8}" />
-	<object class="MarkerTrack" id="{711bf238-d229-4300-b813-323140be8460}" />
 	<object class="MarkerTrack" id="{dcb42a60-08d4-47d1-a7e6-41233654de6c}" />
 	<object class="MarkerTrack" id="{3d36dbcd-0e70-4a9e-b324-c7ba1ad572f5}" />
 	<object class="MarkerTrack" id="{3714a4b0-96b9-4af6-9b0d-ed69b9d6e9e4}" />
@@ -116,7 +114,6 @@
 			<destination>{1f672550-96f6-4b3c-835a-357efcab5a13}</destination>
 			<destination>{c69cddd9-ebaa-42fd-9e30-d0b224f5f51c}</destination>
 			<destination>{bfa90760-3201-4d0f-9cd9-82157c66d054}</destination>
-			<destination>{2882b328-e2b3-4c88-baed-61656fa3235e}</destination>
 		</relationship>
 	</object>
 	<object class="ParameterProxy" id="{79bab262-0e21-4dce-9973-216e82906b3c}">
@@ -337,23 +334,6 @@
 			<destination>{992ba57f-0615-449a-9005-55b1f2024c32}</destination>
 		</relationship>
 	</object>
-	<object class="TransitionMarker" id="{2882b328-e2b3-4c88-baed-61656fa3235e}">
-		<property name="position">
-			<value>153</value>
-		</property>
-		<relationship name="timeline">
-			<destination>{4e296a42-7989-44a5-92d6-e0753abe1402}</destination>
-		</relationship>
-		<relationship name="markerTrack">
-			<destination>{711bf238-d229-4300-b813-323140be8460}</destination>
-		</relationship>
-		<relationship name="destination">
-			<destination>{e822fcbe-b8a7-4689-9e8b-723ddb062c50}</destination>
-		</relationship>
-		<relationship name="triggerConditions">
-			<destination>{cb92b5e8-8f94-47e5-a3d4-983ea99761b4}</destination>
-		</relationship>
-	</object>
 	<object class="Automator" id="{dd4f82d4-bc6f-45e4-9e25-88a55a760f0e}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>volume</value>
@@ -450,17 +430,6 @@
 		</property>
 		<property name="maximum">
 			<value>1</value>
-		</property>
-		<relationship name="parameter">
-			<destination>{71ecf466-c274-4a72-86e6-d883dbf26548}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterCondition" id="{cb92b5e8-8f94-47e5-a3d4-983ea99761b4}">
-		<property name="minimum">
-			<value>0</value>
-		</property>
-		<property name="maximum">
-			<value>0.39499998092651367</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{71ecf466-c274-4a72-86e6-d883dbf26548}</destination>

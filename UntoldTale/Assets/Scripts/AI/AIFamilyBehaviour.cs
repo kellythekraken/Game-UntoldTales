@@ -61,8 +61,6 @@ public class AIFamilyBehaviour : MonoBehaviour
         //should only invoke repeat if player is in sight
         //InvokeRepeating("BoilAnimation",0f,.9f);
         StartCoroutine(BoilAnimation());
-        
-        //allow player input.
 
         //move towards the target position to leave wormi a trail
 

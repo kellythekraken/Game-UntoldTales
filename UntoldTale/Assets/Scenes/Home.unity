@@ -148,14 +148,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24994845}
-  m_LocalRotation: {x: -0, y: -0, z: -0.020948526, w: 0.9997806}
-  m_LocalPosition: {x: 11.34, y: -1.2636037, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0042951717, w: 0.9999908}
+  m_LocalPosition: {x: 11.344799, y: -1.2405307, z: 0}
   m_LocalScale: {x: 1, y: 1.648, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1219643979}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.401}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.492}
 --- !u!114 &24994847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +186,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.83271885, y: 0.053057432}
+  m_Offset: {x: -0.4585474, y: 0.053057432}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -197,7 +197,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6654377, y: 4.0065923}
+  m_Size: {x: 3.4137807, y: 4.0065923}
   m_EdgeRadius: 0
 --- !u!1 &58344365
 GameObject:
@@ -1047,12 +1047,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298454054}
   m_LocalRotation: {x: -0, y: -0, z: -0.06518887, w: 0.99787295}
-  m_LocalPosition: {x: 26.068146, y: -3.3418245, z: 0}
+  m_LocalPosition: {x: 21.5, y: -2.05, z: 0}
   m_LocalScale: {x: 1, y: 1.375, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1219643979}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -7.475}
 --- !u!61 &298454057
 BoxCollider2D:
@@ -2361,7 +2361,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1219643979}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &770621894
 BoxCollider2D:
@@ -3840,9 +3840,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 24994846}
   - {fileID: 770621893}
   - {fileID: 298454055}
-  - {fileID: 24994846}
   m_Father: {fileID: 1432066237}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5066,6 +5066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7fa451dceb21f4695b61f984f4fbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   TitleCanvasUI: {fileID: 228726707}
   playerInput: {fileID: 1572282510}
 --- !u!4 &1887507026 stripped
@@ -5105,7 +5106,6 @@ MonoBehaviour:
   BGMEventEmitters:
   - _name: Home
     eventEmitter: {fileID: 132796312}
-  currentPlayingBGM: 
 --- !u!4 &1898400361
 Transform:
   m_ObjectHideFlags: 0

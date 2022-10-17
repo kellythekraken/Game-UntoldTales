@@ -15,7 +15,6 @@ public class Befriendable : MonoBehaviour
     GameObject childObj;
     internal LevelManager levelManager; //the levelmanager parent, will be set by individual level manager
     Color startColor, currentColor;
-    Vector3 startPosition;
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -25,7 +24,6 @@ public class Befriendable : MonoBehaviour
         spriteSkin.enabled = befriended;
         startColor = sprite.color;
         childObj.SetActive(false);
-        startPosition = transform.position;
     }
 
     void Befriended()

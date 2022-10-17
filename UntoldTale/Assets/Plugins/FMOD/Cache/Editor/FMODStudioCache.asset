@@ -193,7 +193,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Background.bank
   Name: Background
   StudioPath: bank:/Background
-  lastModified: 638016310676364630
+  lastModified: 638016328892417736
   FileSizes:
   - Name: Desktop
     Value: 16337984
@@ -316,7 +316,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638016310677984124
+  lastModified: 638016328916505815
   FileSizes:
   - Name: Desktop
     Value: 1094208
@@ -384,7 +384,7 @@ MonoBehaviour:
   - {fileID: 3391148819787967567}
   StringsBanks:
   - {fileID: 54646594993677441}
-  cacheTime: 638016310677984124
+  cacheTime: 638016328916505815
   cacheVersion: 131593
 --- !u!114 &54646594993677441
 MonoBehaviour:
@@ -401,7 +401,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638016310677044225
+  lastModified: 638016328893649354
   FileSizes:
   - Name: Desktop
     Value: 1386
@@ -449,7 +449,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638016310677014252
+  lastModified: 638016328893599385
   FileSizes:
   - Name: Desktop
     Value: 7044800

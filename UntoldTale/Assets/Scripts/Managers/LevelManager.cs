@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 //attatched to each level parent
 //check how familiar you have became
 public class LevelManager : MonoBehaviour
 {
+    public UnityEvent playerLeaveSceneEvent = new UnityEvent();
+    public bool playerLeaving;
     [SerializeField] string levelName;
     [SerializeField] FMODUnity.StudioEventEmitter sceneBGMEmitter;
     [SerializeField] Color levelTrueColor;
@@ -30,8 +32,12 @@ public class LevelManager : MonoBehaviour
         doorToPreviousRoom.SetActive(false);
         
         AudioManager.Instance.AddToBGMEventList(levelName, sceneBGMEmitter);
+        playerLeaveSceneEvent.AddListener(leaveScene);
     }
-
+    void leaveScene()
+    {
+        Debug.Log("player leave " + this.name);
+    }
     void InitializeList()
     {        
         blobLists = new List<Befriendable>();

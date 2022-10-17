@@ -8,6 +8,7 @@ using UnityEngine.Events;
 //controls scene loading and restart
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] bool debugMode;
     public static GameManager Instance;
     internal UnityEvent GameStartEvent;
     [SerializeField] GameObject TitleCanvasUI;
@@ -52,9 +53,9 @@ public class GameManager : MonoBehaviour
             startGameAction.Disable();
             restartAction.Enable();
             GameStartEvent.Invoke();
-            FreezeInput(.7f);    //freeze player input on start up
             AudioManager.Instance.PlayBGM("Home");
             ResumeGame();
+            if(!debugMode) FreezeInput(3f);
         }
     }
 
