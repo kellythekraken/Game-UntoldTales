@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FadeOutScreen(CanvasGroup canvas,float lerpTime = 1f)  //disappear
     {
-        Debug.Log("start lerping screen");
         float timeElapsed = 0f;
         while(timeElapsed < .5f)
         {
@@ -81,7 +80,6 @@ public class GameManager : MonoBehaviour
             timeElapsed += Time.fixedDeltaTime;
             yield return null;
         }
-        Debug.Log("finish lerping screen");
         TitleCanvasUI.SetActive(false);
     }
     IEnumerator FadeInScreen(CanvasGroup canvas, float lerpTime = 1f)   //appear

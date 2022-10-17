@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
     {
         blobParent = transform.Find("Blobs");
         levelBackground = transform.Find("Background").GetComponent<SpriteRenderer>();
-        tunnelBackground = transform.Find("Tunnel").GetComponent<SpriteRenderer>();
+        tunnelBackground = transform.Find("Tunnel_Background").GetComponent<SpriteRenderer>();
         InitializeList();
         blobTotalCount = blobLists.Count;
         friendCount = 0f;

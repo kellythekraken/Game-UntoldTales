@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIFamilyBehaviour : MonoBehaviour
+public class AIFriendBehaviour : MonoBehaviour
 {
+    public enum AIBehaviour{FORCE, FOLLOW, FLOAT, NOTHING};
+    public bool animateOnGameStart = false;
+    private AIBehaviour _behaviour;
+    internal AIBehaviour Behaviour {get {return _behaviour;} set {_behaviour = value; ChangeAIBehaviour(value);} }
+    [SerializeField] AIBehaviour startBehaviour;
     Transform wormi;
     Rigidbody2D centerRb;
     float calculatedRadius;
@@ -16,38 +21,22 @@ public class AIFamilyBehaviour : MonoBehaviour
         centerRb = GetComponentInChildren<Rigidbody2D>();
         calculatedRadius = transform.localScale.x * GetComponent<CircleCollider2D>().radius +0.5f;
         GameManager.Instance.GameStartEvent.AddListener(GameStarInit);
+        StartCoroutine(FamilyOnGameStartBehaviour());
     }
 
     IEnumerator FamilyOnGameStartBehaviour()
     {
         //hug
         var timeElapsed = 0f;
-        while(timeElapsed < 5f)
-        {
-            if(Vector2.Distance(centerRb.position,wormi.position) > calculatedRadius)
-            {
-                Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, followSpeed * Time.fixedDeltaTime);
-                centerRb.MovePosition(newPosition);
-            }
-            else {yield break;}
-
-            timeElapsed += Time.deltaTime;
-            yield return null;
-        }
-        yield break;
-
-        var startPos = centerRb.position;
-
         while(timeElapsed < 3f)
         {
 
-            //Vector2 newPosition = Vector2.Lerp(startPos, wormi.position, timeElapsed/3f);
-            centerRb.MovePosition(wormi.position * Time.fixedDeltaTime);
-            timeElapsed += Time.fixedDeltaTime;
+            Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, timeElapsed/3f);
+            centerRb.MovePosition(newPosition * Time.deltaTime);
+            timeElapsed += Time.deltaTime;
             yield return null;
         }
 
-/*
         //move away
         timeElapsed = 0f;
         Debug.Log("start moving away");
@@ -59,11 +48,10 @@ public class AIFamilyBehaviour : MonoBehaviour
         {
             centerRb.AddForce(centerRb.transform.right *5f * centerRb.mass);
 
-            timeElapsed += Time.fixedDeltaTime;
+            timeElapsed += Time.deltaTime;
             yield return null;
         }
         Debug.Log("stop moving away");
-          */
 
         /*behaviour:
             - slowly march towards wormi and hug tight
@@ -75,15 +63,39 @@ public class AIFamilyBehaviour : MonoBehaviour
 
     void GameStarInit()
     {
-        StartCoroutine(FamilyOnGameStartBehaviour());
+        ChangeAIBehaviour(startBehaviour); 
     }
+
+    void ChangeAIBehaviour(AIBehaviour newBehaviour)
+    {
+        switch(newBehaviour)
+        {
+            case AIBehaviour.FORCE:
+                ForceBehaviour(defaultForce);
+                return;
+            case AIBehaviour.FOLLOW:
+                StartCoroutine(FollowBehaviour());
+                return;
+            case AIBehaviour.FLOAT:
+                FloatBehaviour();
+                return;
+            case AIBehaviour.NOTHING:
+                return;
+        }
+    }
+
+    /*void FixedUpdate()
+    {
+            //transform.position = Vector3.Lerp(transform.position,centerRb.position, followSpeed * Time.deltaTime);
+            //transform.position = Vector3.MoveTowards(transform.position,wormi.position, followSpeed * Time.deltaTime);
+    }*/
 
     void ForceBehaviour(float force)
     {
         centerRb.transform.right = (Vector2)wormi.position - centerRb.position;
         centerRb.AddForce(centerRb.transform.right * force,ForceMode2D.Impulse);
     }
-    IEnumerator FollowBehaviour()
+    IEnumerator FollowBehaviour(bool persistent = false)
     {
         var timeElapsed = 0f;
         while(timeElapsed < 5f)
@@ -93,7 +105,7 @@ public class AIFamilyBehaviour : MonoBehaviour
                 Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, followSpeed * Time.deltaTime);
                 centerRb.MovePosition(newPosition);
             }
-            else {yield break;}
+            else if(!persistent) {yield break;}
 
             timeElapsed += Time.deltaTime;
             yield return null;
