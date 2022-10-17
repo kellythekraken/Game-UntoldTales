@@ -22,48 +22,38 @@ public class AIFamilyBehaviour : MonoBehaviour
     {
         //hug
         var timeElapsed = 0f;
-        while(timeElapsed < 5f)
+        while(timeElapsed < 1.5f)
         {
             if(Vector2.Distance(centerRb.position,wormi.position) > calculatedRadius)
             {
-                Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, followSpeed * Time.fixedDeltaTime);
+                Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, 0.01f);
                 centerRb.MovePosition(newPosition);
             }
-            else {yield break;}
+            else{ 
+                Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, 0.008f);
+                centerRb.MovePosition(newPosition);
+            }
 
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-        yield break;
+        Debug.Log("finish hugging");
 
-        var startPos = centerRb.position;
-
-        while(timeElapsed < 3f)
-        {
-
-            //Vector2 newPosition = Vector2.Lerp(startPos, wormi.position, timeElapsed/3f);
-            centerRb.MovePosition(wormi.position * Time.fixedDeltaTime);
-            timeElapsed += Time.fixedDeltaTime;
-            yield return null;
-        }
-
-/*
+        yield return new WaitForSeconds(1f);
         //move away
         timeElapsed = 0f;
         Debug.Log("start moving away");
         Vector2 direction = transform.position - wormi.transform.position;
         direction.Normalize();
-        centerRb.transform.right = direction;
         //centerRb.AddForce(centerRb.transform.right * force,ForceMode2D.Impulse);
-        while(timeElapsed < 2f)
+        while(timeElapsed < 4f)
         {
-            centerRb.AddForce(centerRb.transform.right *5f * centerRb.mass);
+            centerRb.AddForce(direction *5f * centerRb.mass);
 
             timeElapsed += Time.fixedDeltaTime;
             yield return null;
         }
         Debug.Log("stop moving away");
-          */
 
         /*behaviour:
             - slowly march towards wormi and hug tight
