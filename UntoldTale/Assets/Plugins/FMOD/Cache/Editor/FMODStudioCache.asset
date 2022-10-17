@@ -24,6 +24,30 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-6955427273482139504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level 1New/Tunnel
+  m_EditorClassIdentifier: 
+  Name: Tunnel
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 835814604
+    data2: 2277899101
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-6233176452229193170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,10 +193,10 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Background.bank
   Name: Background
   StudioPath: bank:/Background
-  lastModified: 638016115347095922
+  lastModified: 638016125187211452
   FileSizes:
   - Name: Desktop
-    Value: 11175776
+    Value: 16337536
   Exists: 1
 --- !u!114 &-3044955133868564684
 MonoBehaviour:
@@ -198,6 +222,37 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-2589114937866507058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/Level 1New
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/Level 1New
+  Guid:
+    Data1: -237558187
+    Data2: 1306841414
+    Data3: 1819111579
+    Data4: -1401913523
+  Banks:
+  - {fileID: -3132890049782347035}
+  - {fileID: 3391148819787967567}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3443332355111173209}
+  - {fileID: -6955427273482139504}
+  - {fileID: 5951220485447529142}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 163248
 --- !u!114 &-2238488156954673888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +292,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638016115375680520
+  lastModified: 638016125188796858
   FileSizes:
   - Name: Desktop
     Value: 1094208
@@ -296,6 +351,7 @@ MonoBehaviour:
   - {fileID: -6233176452229193170}
   - {fileID: 8580521620159670240}
   - {fileID: -4793932909628978618}
+  - {fileID: -2589114937866507058}
   EditorParameters:
   - {fileID: 6515488625429240082}
   - {fileID: -2238488156954673888}
@@ -303,7 +359,7 @@ MonoBehaviour:
   - {fileID: 3391148819787967567}
   StringsBanks:
   - {fileID: 54646594993677441}
-  cacheTime: 638016115375680520
+  cacheTime: 638016125188796858
   cacheVersion: 131593
 --- !u!114 &54646594993677441
 MonoBehaviour:
@@ -320,10 +376,10 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638016115348914549
+  lastModified: 638016125187653949
   FileSizes:
   - Name: Desktop
-    Value: 1344
+    Value: 1388
   Exists: 1
 --- !u!114 &2234949126624696055
 MonoBehaviour:
@@ -368,10 +424,34 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638016115348415010
+  lastModified: 638016125187623962
   FileSizes:
   - Name: Desktop
-    Value: 1882464
+    Value: 7044384
+  Exists: 1
+--- !u!114 &3443332355111173209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level 1New/Befriended
+  m_EditorClassIdentifier: 
+  Name: Befriended
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0.005
+  ID:
+    data1: 2271977830
+    data2: 4266201153
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &4369353502865291408
 MonoBehaviour:
@@ -479,6 +559,30 @@ MonoBehaviour:
   - Piano
   - Flute
   - Guitar
+  Exists: 1
+--- !u!114 &5951220485447529142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level 1New/Exhaustion
+  m_EditorClassIdentifier: 
+  Name: Exhaustion
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1434171982
+    data2: 3662490646
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &6515488625429240082
 MonoBehaviour:

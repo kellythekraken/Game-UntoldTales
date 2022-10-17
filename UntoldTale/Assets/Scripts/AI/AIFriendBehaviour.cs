@@ -12,6 +12,7 @@ public class AIFriendBehaviour : MonoBehaviour
     complete the AI behaviour: 
         - friend come greet you when you're leaving, and stuff the exit after you're gone
         - friend turn a bit blue when you're leaving
+        - reset position after you're gone. 
 */
     public enum AIBehaviour{FORCE, FOLLOW, FLOAT, NOTHING};
     public bool animateOnGameStart = false;
