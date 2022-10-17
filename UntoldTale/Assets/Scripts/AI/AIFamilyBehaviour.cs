@@ -5,10 +5,13 @@ using UnityEngine;
 public class AIFamilyBehaviour : MonoBehaviour
 {
     Transform wormi;
-    Rigidbody2D centerRb;
     float calculatedRadius;
     [SerializeField] float followSpeed;
     [SerializeField] float defaultForce = 500f;
+    Rigidbody2D centerRb;
+    List<Rigidbody2D> bones;
+
+    bool boil = false;
 
     void Start()
     {
@@ -16,11 +19,17 @@ public class AIFamilyBehaviour : MonoBehaviour
         centerRb = GetComponentInChildren<Rigidbody2D>();
         calculatedRadius = transform.localScale.x * GetComponent<CircleCollider2D>().radius +0.5f;
         GameManager.Instance.GameStartEvent.AddListener(GameStarInit);
+
+        bones = new List<Rigidbody2D>();
+        foreach(Transform i in centerRb.transform)
+        {
+            bones.Add(i.GetComponent<Rigidbody2D>());
+        }
     }
 
     IEnumerator FamilyOnGameStartBehaviour()
     {
-        //hug
+        // slowly march towards wormi and hug tight
         var timeElapsed = 0f;
         while(timeElapsed < 1.5f)
         {
@@ -37,30 +46,27 @@ public class AIFamilyBehaviour : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("finish hugging");
 
         yield return new WaitForSeconds(1f);
-        //move away
+        // after a few seconds, move away slowly and leave her a trail
         timeElapsed = 0f;
-        Debug.Log("start moving away");
         Vector2 direction = transform.position - wormi.transform.position;
         direction.Normalize();
-        //centerRb.AddForce(centerRb.transform.right * force,ForceMode2D.Impulse);
         while(timeElapsed < 4f)
         {
             centerRb.AddForce(direction *5f * centerRb.mass);
-
             timeElapsed += Time.fixedDeltaTime;
             yield return null;
         }
-        Debug.Log("stop moving away");
+        //should only invoke repeat if player is in sight
+        //InvokeRepeating("BoilAnimation",0f,.9f);
+        StartCoroutine(BoilAnimation());
+        
+        //allow player input.
 
-        /*behaviour:
-            - slowly march towards wormi and hug tight
-            - after a few seconds, move away slowly and leave her a trail
-            - now you can move, the path to friends and tunnel 
-            - pathfinding? follow a path
-          */  
+        //move towards the target position to leave wormi a trail
+
+        //when the player is gone, reset position to start position (without repeating all this animation)
     }
 
     void GameStarInit()
@@ -68,30 +74,18 @@ public class AIFamilyBehaviour : MonoBehaviour
         StartCoroutine(FamilyOnGameStartBehaviour());
     }
 
-    void ForceBehaviour(float force)
+    IEnumerator BoilAnimation()
     {
-        centerRb.transform.right = (Vector2)wormi.position - centerRb.position;
-        centerRb.AddForce(centerRb.transform.right * force,ForceMode2D.Impulse);
-    }
-    IEnumerator FollowBehaviour()
-    {
-        var timeElapsed = 0f;
-        while(timeElapsed < 5f)
+        //randomly move around each bone under center rb
+        for(int c = 0; c< 999; c++)
         {
-            if(Vector2.Distance(centerRb.position,wormi.position) > calculatedRadius)
+            foreach(var i in bones)
             {
-                Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, followSpeed * Time.deltaTime);
-                centerRb.MovePosition(newPosition);
+                Vector2 direction = new Vector2((float)Random.Range(-50f, 50f), (float)Random.Range(-50f, 50f));
+                i.AddForce(direction * 3f);
+                yield return new WaitForSeconds(0.3f);
             }
-            else {yield break;}
-
-            timeElapsed += Time.deltaTime;
-            yield return null;
+            yield return new WaitForSeconds(0.6f);
         }
     }
-    void FloatBehaviour()
-    {
-        //randomly move around, like a boil animation
-    }
-
 }
