@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 
+//Audio to do:  1. exhaustion parameter | 2. befriend parameter | 3. befriend sound
+
 public enum ParamType{ CONTINUOUS, LABEL}
 public enum AudioControlType{ PARAMETER,SONGSWITCH}
 public enum ParamScope{ LOCAL, GLOBAL}
@@ -92,22 +94,31 @@ public class AudioManager : MonoBehaviour
 			unreleasedSounds.Remove(instance);
 		}
 	}
-	FMOD.Studio.EventInstance GetPlayingInstanceByName(string eventName)
+	public void SetLocalParam(string eventName, string paramName, float newValue)
 	{
-		var path = "event:/" + eventName;
+		var emitter = FindEmitterByName(eventName);
 
-		foreach(var i in unreleasedSounds)
+		foreach(var i in emitter.Params)
 		{
-			string result;
-			FMOD.Studio.EventDescription description;
-			i.getDescription(out description);
-			description.getPath(out result);
-			if(result == path) { return i;}
+			if (i.Name == paramName)
+			{
+				i.Value = newValue;
+				Debug.Log("new value: " + i.Value);
+				break;
+			}
 		}
-		Debug.LogWarning("Did not find event by name");
-		return default(FMOD.Studio.EventInstance);
+		//else {Debug.LogWarning("didn't find the emitter in the bgm emitter list!");}
+		
+		//var instance = GetPlayingInstanceByName(eventName);
+		//instance.setParameterByName(paramName, newValue);
+		
 	}
-	public void SetParameter(string eventName, ParamScope scope, string paramName, float fadeFrom, float fadeTo)
+
+	public void SetGlobalParam(string paramName, float newValue)
+	{
+		RuntimeManager.StudioSystem.setParameterByName(paramName,newValue);
+	}
+	public void FadeParameter(string eventName, ParamScope scope, string paramName, float fadeFrom, float fadeTo)
 	{
 		switch(scope)
 		{
@@ -122,7 +133,6 @@ public class AudioManager : MonoBehaviour
 		}
 		
 	}
-
     IEnumerator FadeLocalParam(FMOD.Studio.EventInstance instance, string paramName, float fadeFrom, float fadeTo)
     {
         float elapsedTime = 0f;
@@ -149,7 +159,29 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.StudioSystem.setParameterByName(paramName,fadeTo);
     }
 
-	//fmod studio parameter trigger
-	
-	//fmod studio global parameter trigger
+#region HELPERS
+	StudioEventEmitter FindEmitterByName(string name)
+	{
+		foreach(var i in BGMEventEmitters)
+		{
+			if(i._name == name) return i.eventEmitter;
+		}
+		return null;
+	}
+	FMOD.Studio.EventInstance GetPlayingInstanceByName(string eventName)
+	{
+		var path = "event:/" + eventName;
+
+		foreach(var i in unreleasedSounds)
+		{
+			string result;
+			FMOD.Studio.EventDescription description;
+			i.getDescription(out description);
+			description.getPath(out result);
+			if(result == path) { return i;}
+		}
+		Debug.LogWarning("Did not find event by name");
+		return default(FMOD.Studio.EventInstance);
+	}
+#endregion
 }

@@ -30,6 +30,7 @@ public class Befriendable : MonoBehaviour
 
     void Befriended()
     {
+        AudioManager.Instance.PlayOneShot("Befriend");
         gameObject.tag = "Friend";
         sprite.color = trueColor;
         myCollider.enabled = false;

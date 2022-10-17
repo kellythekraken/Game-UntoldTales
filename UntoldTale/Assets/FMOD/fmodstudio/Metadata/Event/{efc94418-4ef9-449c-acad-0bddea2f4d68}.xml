@@ -56,7 +56,11 @@
 			<destination>{d6fe78e0-8189-4233-86ba-4c6c9126bff2}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{5b41b273-585f-410e-88d8-f02b104f0316}" />
+	<object class="EventAutomatableProperties" id="{5b41b273-585f-410e-88d8-f02b104f0316}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{637f97b5-a40f-4031-88c0-1911a8fb743a}" />
 	<object class="GroupTrack" id="{47d52433-c946-46a0-b901-fd77e0a4ca3e}">
 		<relationship name="modules">
@@ -124,21 +128,33 @@
 	<object class="MixerBusPanner" id="{dae2ce28-5501-40af-88de-9fa51d8f3bcb}" />
 	<object class="MixerBusFader" id="{88e0f575-ddbb-4b9e-9b58-dc89f9186130}" />
 	<object class="SingleSound" id="{41b6b21d-b1d0-4aae-ac82-80a98883e0fd}">
+		<property name="volume">
+			<value>-8.5</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{b8d53d52-e3e7-43af-8194-606da7e43b4e}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{0442e0ad-e990-4bb6-ba54-ce21f19e82f9}">
+		<property name="volume">
+			<value>-11</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{49f30125-16f6-4cf8-97be-05076a00ca42}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{d18ea860-944b-436e-8a10-b8562bb1e47b}">
+		<property name="volume">
+			<value>-9</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{0f7c82ff-1f81-45d8-9742-723e33b8112e}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{9514f0c8-1b4e-4ea4-86a7-5209ba0ce745}">
+		<property name="volume">
+			<value>-7.5</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{a3ea1c22-3a96-49bf-b690-cad153ffe925}</destination>
 		</relationship>

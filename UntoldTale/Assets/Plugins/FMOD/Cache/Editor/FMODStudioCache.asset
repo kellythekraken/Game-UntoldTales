@@ -140,9 +140,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level 1/Exhaustion
+  m_Name: parameter:/Level 1/Energy
   m_EditorClassIdentifier: 
-  Name: Exhaustion
+  Name: Energy
   StudioPath: 
   Min: 0
   Max: 1
@@ -164,13 +164,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level 1/Befriended
+  m_Name: parameter:/Level 1/Familiarity
   m_EditorClassIdentifier: 
-  Name: Befriended
+  Name: Familiarity
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0.005
+  Default: 0
   ID:
     data1: 2271977830
     data2: 4266201153
@@ -193,10 +193,10 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Background.bank
   Name: Background
   StudioPath: bank:/Background
-  lastModified: 638016125187211452
+  lastModified: 638016272995395880
   FileSizes:
   - Name: Desktop
-    Value: 16337536
+    Value: 16337568
   Exists: 1
 --- !u!114 &-3044955133868564684
 MonoBehaviour:
@@ -263,10 +263,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Exhaustion
+  m_Name: parameter:/Energy
   m_EditorClassIdentifier: 
-  Name: Exhaustion
-  StudioPath: parameter:/Exhaustion
+  Name: Energy
+  StudioPath: parameter:/Energy
   Min: 0
   Max: 1
   Default: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638016125188796858
+  lastModified: 638016272997235894
   FileSizes:
   - Name: Desktop
     Value: 1094208
@@ -359,7 +359,7 @@ MonoBehaviour:
   - {fileID: 3391148819787967567}
   StringsBanks:
   - {fileID: 54646594993677441}
-  cacheTime: 638016125188796858
+  cacheTime: 638016272997235894
   cacheVersion: 131593
 --- !u!114 &54646594993677441
 MonoBehaviour:
@@ -376,10 +376,10 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638016125187653949
+  lastModified: 638016272996185873
   FileSizes:
   - Name: Desktop
-    Value: 1388
+    Value: 1386
   Exists: 1
 --- !u!114 &2234949126624696055
 MonoBehaviour:
@@ -424,7 +424,7 @@ MonoBehaviour:
   Path: Assets/FMOD/fmodstudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638016125187623962
+  lastModified: 638016272996146114
   FileSizes:
   - Name: Desktop
     Value: 7044384
@@ -439,13 +439,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level 1New/Befriended
+  m_Name: parameter:/Level 1New/Familiarity
   m_EditorClassIdentifier: 
-  Name: Befriended
+  Name: Familiarity
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0.005
+  Default: 0
   ID:
     data1: 2271977830
     data2: 4266201153
@@ -570,9 +570,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level 1New/Exhaustion
+  m_Name: parameter:/Level 1New/Energy
   m_EditorClassIdentifier: 
-  Name: Exhaustion
+  Name: Energy
   StudioPath: 
   Min: 0
   Max: 1

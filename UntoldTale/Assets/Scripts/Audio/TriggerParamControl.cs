@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerParamControl : MonoBehaviour
 {
     [SerializeField] ParamScope paramScope;
-    public string _eventName;
+    public string _eventName;   //only for local parameter
     public string _parameter;
     [SerializeField] [Range(0,1f)] float fadeFrom;
     [SerializeField] [Range(0,1f)] float fadeTo;
@@ -15,7 +15,7 @@ public class TriggerParamControl : MonoBehaviour
     {
         if(collider.gameObject.CompareTag("Player"))
         {
-            AudioManager.Instance.SetParameter(_eventName, paramScope, _parameter, fadeFrom, fadeTo);
+            AudioManager.Instance.FadeParameter(_eventName, paramScope, _parameter, fadeFrom, fadeTo);
         }
     }
 

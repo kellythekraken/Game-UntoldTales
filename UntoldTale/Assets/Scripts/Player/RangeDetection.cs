@@ -10,10 +10,10 @@ public class RangeDetection : MonoBehaviour
     [SerializeField] TailMovement tailScript;
     LineRenderer tailrender;
     public float befriendSpeed = 1f;    //could be modified as you become better at it
-    public float exhaustSpeed = 1f;      //will DOUBLE if you befriending multiple at once
+    public float exhaustSpeed = .1f;      //will DOUBLE if you befriending multiple at once
     public int exhaustRate = 0;         //how many you're socializing at once
-    public float rechargeSpeed = 1f;
-    public float socialBattery = 100f;   //reduce when you're befriending blobs
+    public float rechargeSpeed = .1f;
+    public float socialBattery = 1;   //reduce when you're befriending blobs
     public Gradient exhaustColor;
     private Gradient healthyColor;
 
@@ -28,6 +28,7 @@ public class RangeDetection : MonoBehaviour
     }
     void FixedUpdate()
     {
+        UpdateExhaustionParam();
         if(exhaustRate>0 && socialBattery>0f) //socializing, reduce social battery
         {
             socialBattery -= exhaustSpeed * exhaustRate * Time.deltaTime;
@@ -47,20 +48,23 @@ public class RangeDetection : MonoBehaviour
                     friend.StartBefriending();
                 }
             }
-            if(socialBattery <5f) tailScript.CurlUp();
+            if(socialBattery <.05f) tailScript.CurlUp();
         }
-        else if(exhaustRate == 0 && socialBattery<100) //alone time. increase social battery
+        else if(exhaustRate == 0 && socialBattery<1) //alone time. increase social battery
         {
             socialBattery += rechargeSpeed * Time.deltaTime;
             ChangeExhaustionColor();
         }
     }
 
+    void UpdateExhaustionParam()
+    {
+        AudioManager.Instance.SetGlobalParam("Energy",socialBattery);
+    }
     private void ChangeExhaustionColor()
     {
-        var lerpVal = socialBattery/100f;
-        areaLight.intensity = lerpVal;
-        tailrender.colorGradient = GradientLerp(exhaustColor,healthyColor,lerpVal,false,false);
+        areaLight.intensity = socialBattery;
+        tailrender.colorGradient = GradientLerp(exhaustColor,healthyColor,socialBattery,false,false);
     }
     void OnTriggerEnter2D(Collider2D collider)
     {

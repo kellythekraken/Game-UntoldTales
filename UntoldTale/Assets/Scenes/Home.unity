@@ -621,11 +621,11 @@ MonoBehaviour:
   befriendList: []
   areaLight: {fileID: 663853511}
   tailScript: {fileID: 836113628}
-  befriendSpeed: 30
-  exhaustSpeed: 20
+  befriendSpeed: 80
+  exhaustSpeed: 0.4
   exhaustRate: 0
-  rechargeSpeed: 40
-  socialBattery: 100
+  rechargeSpeed: 0.4
+  socialBattery: 1
   exhaustColor:
     serializedVersion: 2
     key0: {r: 0.81242925, g: 0.40583837, b: 0.9056604, a: 1}
@@ -1496,6 +1496,7 @@ GameObject:
   - component: {fileID: 545788564}
   - component: {fileID: 545788565}
   - component: {fileID: 545788566}
+  - component: {fileID: 545788567}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1628,6 +1629,19 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &545788567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545788559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!4 &638076163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7553957265921096838, guid: f49a9bfb58452dc4a871740e5a6111a9, type: 3}
@@ -4949,8 +4963,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858249408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0823, y: 0, z: 0}
-  m_LocalScale: {x: 56.504303, y: 32.463005, z: 8.5395}
+  m_LocalPosition: {x: 11.405, y: 0, z: 0}
+  m_LocalScale: {x: 79.47895, y: 32.463005, z: 8.5395}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1432066237}
