@@ -51,6 +51,7 @@ public class AIFamilyBehaviour : MonoBehaviour
 
         // move away slowly
         StartCoroutine(ResetPos());
+        StartCoroutine(BoilAnimation());
         yield break;
         timeElapsed = 0f;
         Vector2 direction = transform.position - wormi.transform.position;
@@ -64,7 +65,6 @@ public class AIFamilyBehaviour : MonoBehaviour
         }
         //should only invoke repeat if player is in sight
         //InvokeRepeating("BoilAnimation",0f,.9f);
-        StartCoroutine(BoilAnimation());
 
         //move towards the target position to leave wormi a trail
 

@@ -9,6 +9,7 @@ public class LeaveZoneTrigger : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.CompareTag("Player")) levelManager.playerEnterLeaveZoneEvent.Invoke();
+        else if (collider.gameObject.CompareTag("Friend")) {collider.GetComponentInParent<AIFriendBehaviour>().myState = AISTATE.REST;} 
     }
     void OnTriggerExit2D(Collider2D collider)
     {

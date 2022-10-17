@@ -55,7 +55,7 @@ public class LevelManager : MonoBehaviour
         {
             if(!i.gameObject.activeSelf) continue;
             var ai = i.GetComponent<AIFriendBehaviour>();
-            if(ai.enabled) ai.follow = true;
+            if(ai.enabled) ai.myState = AISTATE.FOLLOW;
         }
     }
     void LeaveSceneEventAction()
@@ -70,7 +70,10 @@ public class LevelManager : MonoBehaviour
             if(!i.gameObject.activeSelf) continue;
 
             var ai = i.GetComponent<AIFriendBehaviour>();
-            if(ai.enabled) ai.MoveBackToDefaultPosition();
+            if(ai.enabled) 
+            {
+                ai.myState = AISTATE.RETREAT;
+            }
         }
     }
 

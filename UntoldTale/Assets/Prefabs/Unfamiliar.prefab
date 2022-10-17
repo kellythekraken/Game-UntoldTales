@@ -565,7 +565,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6899236457645889995}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 61.2, y: 16.1, z: 0}
   m_LocalScale: {x: 1.2935055, y: 1.2935055, z: 1.2935055}
   m_ConstrainProportionsScale: 0
@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 6899236458209433325}
   m_Layer: 0
   m_Name: cent
-  m_TagString: Untagged
+  m_TagString: Friend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
