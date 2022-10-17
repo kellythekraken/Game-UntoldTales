@@ -51,9 +51,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.5
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -90,7 +90,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.4522562, y: 2.1147673}
+  m_ConnectedAnchor: {x: 1.4522566, y: 2.1147673}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -110,7 +110,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.4909419, y: -2.501523}
+  m_ConnectedAnchor: {x: 1.4909413, y: -2.5015228}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -130,7 +130,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 2.965424, y: 0.1780293}
+  m_ConnectedAnchor: {x: 2.9654236, y: 0.17802913}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -179,13 +179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f85fcd6103826409d564b9648d3b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventPath:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!1 &7553957264758791616
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,9 +230,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.5
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -276,7 +269,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.2602265, y: 2.431948}
+  m_ConnectedAnchor: {x: 1.2602262, y: 2.4319482}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -296,7 +289,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.3457829, y: -2.3010218}
+  m_ConnectedAnchor: {x: 1.3457824, y: -2.3010218}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -316,7 +309,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -1.3030392, y: -2.3064413}
+  m_ConnectedAnchor: {x: -1.3030393, y: -2.306441}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -365,13 +358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f85fcd6103826409d564b9648d3b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventPath:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!1 &7553957265009947743
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,9 +409,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.5
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -462,7 +448,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.4434817, y: 2.485025}
+  m_ConnectedAnchor: {x: 1.4434814, y: 2.4850242}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -482,7 +468,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.0360339, y: -2.6306794}
+  m_ConnectedAnchor: {x: 1.036034, y: -2.6306796}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -502,7 +488,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -1.2053404, y: 2.4796054}
+  m_ConnectedAnchor: {x: -1.2053404, y: 2.479605}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -519,13 +505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f85fcd6103826409d564b9648d3b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventPath:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!114 &1150615361902987685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,9 +588,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 30
+  m_Mass: 15
   m_LinearDrag: 10
-  m_AngularDrag: 0
+  m_AngularDrag: 8
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -685,9 +664,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.5
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -716,7 +695,7 @@ SpringJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7553957265884188743}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 7553957265009947749}
@@ -724,7 +703,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.4761344, y: -2.465768}
+  m_ConnectedAnchor: {x: 1.4761342, y: -2.4657679}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -744,7 +723,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.4788778, y: 2.2178264}
+  m_ConnectedAnchor: {x: 1.478878, y: 2.217826}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -764,7 +743,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -2.6488218, y: -0.005419438}
+  m_ConnectedAnchor: {x: -2.6488218, y: -0.005419323}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -781,13 +760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f85fcd6103826409d564b9648d3b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventPath:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!114 &8944612143151356225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,7 +821,7 @@ Transform:
   m_GameObject: {fileID: 7553957265921096839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.87, y: 0.63, z: 0}
-  m_LocalScale: {x: 2.3258, y: 2.3258, z: 0}
+  m_LocalScale: {x: 2.2298, y: 2.2298, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7553957265257149351}
@@ -930,8 +902,8 @@ MonoBehaviour:
   - {fileID: 7553957264758791619}
   - {fileID: 7553957265257149351}
   m_Bounds:
-    m_Center: {x: 0.05458188, y: -0.1259265, z: 0}
-    m_Extent: {x: 2.9550002, y: 2.963431, z: 0}
+    m_Center: {x: 0.05458212, y: -0.12592602, z: 0}
+    m_Extent: {x: 2.955, y: 2.963431, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -963,8 +935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ee0c36c1008ad478eb1219fc7b5173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startBehaviour: 0
-  followSpeed: 0
+  followSpeed: 0.01
   defaultForce: 500
 --- !u!1 &7553957266404659354
 GameObject:
@@ -1017,9 +988,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.5
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1056,7 +1027,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.4699111, y: 2.4152026}
+  m_ConnectedAnchor: {x: 1.4699115, y: 2.415203}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -1076,7 +1047,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.2943577, y: -2.2149336}
+  m_ConnectedAnchor: {x: 1.2943577, y: -2.214934}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -1096,7 +1067,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.619554, y: 2.362046}
+  m_ConnectedAnchor: {x: 1.619554, y: 2.3620458}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -1113,13 +1084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f85fcd6103826409d564b9648d3b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventPath:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!114 &3634107088253723387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1203,9 +1167,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.5
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1242,7 +1206,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.5870056, y: 2.4417078}
+  m_ConnectedAnchor: {x: 1.5870057, y: 2.4417078}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -1262,7 +1226,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.2056037, y: -2.4594843}
+  m_ConnectedAnchor: {x: 1.2056038, y: -2.4594843}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -1282,7 +1246,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.4360309, y: -2.3001726}
+  m_ConnectedAnchor: {x: 1.4360306, y: -2.3001719}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -1331,10 +1295,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f85fcd6103826409d564b9648d3b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventPath:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 

@@ -7,11 +7,11 @@ public class AIFamilyBehaviour : MonoBehaviour
     Transform wormi;
     float calculatedRadius;
     [SerializeField] float followSpeed;
-    [SerializeField] float defaultForce = 500f;
+    [SerializeField] bool isFriend;
     Rigidbody2D centerRb;
     List<Rigidbody2D> bones;
-
     bool boil = false;
+    Vector2 startPosition;
 
     void Start()
     {
@@ -19,6 +19,7 @@ public class AIFamilyBehaviour : MonoBehaviour
         centerRb = GetComponentInChildren<Rigidbody2D>();
         calculatedRadius = transform.localScale.x * GetComponent<CircleCollider2D>().radius +0.5f;
         GameManager.Instance.GameStartEvent.AddListener(GameStarInit);
+        startPosition = transform.position;
 
         bones = new List<Rigidbody2D>();
         foreach(Transform i in centerRb.transform)
@@ -31,15 +32,16 @@ public class AIFamilyBehaviour : MonoBehaviour
     {
         // slowly march towards wormi and hug tight
         var timeElapsed = 0f;
-        while(timeElapsed < 1.5f)
+        var huggingSpeed = followSpeed *.6f;
+        while(timeElapsed < 3f)
         {
             if(Vector2.Distance(centerRb.position,wormi.position) > calculatedRadius)
             {
-                Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, 0.01f);
+                Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, followSpeed);
                 centerRb.MovePosition(newPosition);
             }
             else{ 
-                Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, 0.008f);
+                Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, huggingSpeed);
                 centerRb.MovePosition(newPosition);
             }
 
@@ -47,14 +49,16 @@ public class AIFamilyBehaviour : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(1f);
-        // after a few seconds, move away slowly and leave her a trail
+        // move away slowly
+        StartCoroutine(ResetPos());
+        yield break;
         timeElapsed = 0f;
         Vector2 direction = transform.position - wormi.transform.position;
+        float randNum = Random.Range(1f,6f);
         direction.Normalize();
         while(timeElapsed < 4f)
         {
-            centerRb.AddForce(direction *5f * centerRb.mass);
+            centerRb.AddForce(direction * randNum * centerRb.mass);
             timeElapsed += Time.fixedDeltaTime;
             yield return null;
         }
@@ -84,6 +88,21 @@ public class AIFamilyBehaviour : MonoBehaviour
                 yield return new WaitForSeconds(0.3f);
             }
             yield return new WaitForSeconds(0.6f);
+        }
+    }
+
+    IEnumerator ResetPos()
+    {
+        float elapsed = 0f;
+        var startpos = centerRb.position;
+        float randTime = Random.Range(0.7f,2.7f);
+
+        while(elapsed< randTime)
+        {
+            var lerpVal = Vector2.Lerp(startpos, startPosition, elapsed/randTime);
+            centerRb.MovePosition(lerpVal);
+            elapsed += Time.deltaTime;
+            yield return null;
         }
     }
 }
