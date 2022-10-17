@@ -2,34 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//ONLY ENABLED AFTER BEFRIENDED
 public class AIFriendBehaviour : MonoBehaviour
 {
 /* 
     complete the AI behaviour: 
         - friend come greet you when you're leaving, and stuff the exit after you're gone
         - friend turn a bit blue when you're leaving
-        - reset position after you're gone. 
 */
-    bool follow;
-    public bool animateOnGameStart = false;
+    public bool follow = false;
     Transform wormi;
     Rigidbody2D centerRb;
     float calculatedRadius;
-    [SerializeField] float followSpeed;
-    [SerializeField] float defaultForce = 500f;
+    public float followSpeed = .3f;
     Vector3 startPosition;
 
     void Start()
     {
         wormi = HeadMovement.Instance.transform;
         centerRb = GetComponentInChildren<Rigidbody2D>();
-        calculatedRadius = transform.localScale.x * GetComponent<CircleCollider2D>().radius +0.5f;
+        calculatedRadius = transform.localScale.x * GetComponent<CircleCollider2D>().radius +1.5f;
         startPosition = transform.position;
     }
 
     void FixedUpdate()
     {
-        if(follow)
+        if(follow)  
         {
             if(Vector2.Distance(centerRb.position,wormi.position) > calculatedRadius)
             {
@@ -39,19 +37,23 @@ public class AIFriendBehaviour : MonoBehaviour
         }
     }
 
-    void MoveBackToDefaultPosition()
+    public void MoveBackToDefaultPosition()
     {
-        while(true)
+        StartCoroutine(ResetPos());
+    }
+    IEnumerator ResetPos()
+    {
+        follow = false;
+        float elapsed = 0f;
+        var startpos = centerRb.position;
+        while(elapsed< 2f)
         {
-            var dist = Vector3.Distance(centerRb.position, startPosition);
-            if(dist>1f)
-            {
-                var lerpVal = Vector2.Lerp(centerRb.position, startPosition, 0.05f);
-            }
-            else {break;}
+            var lerpVal = Vector2.Lerp(startpos, startPosition, elapsed/2f);
+            centerRb.MovePosition(lerpVal);
+            elapsed += Time.deltaTime;
+            yield return null;
         }
     }
-
     void ForceBehaviour(float force)
     {
         centerRb.transform.right = (Vector2)wormi.position - centerRb.position;

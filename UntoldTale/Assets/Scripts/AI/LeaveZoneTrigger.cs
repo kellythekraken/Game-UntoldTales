@@ -8,7 +8,7 @@ public class LeaveZoneTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.gameObject.CompareTag("Player")) levelManager.playerLeaving = true;
+        if(collider.gameObject.CompareTag("Player")) levelManager.playerEnterLeaveZoneEvent.Invoke();
     }
     void OnTriggerExit2D(Collider2D collider)
     {

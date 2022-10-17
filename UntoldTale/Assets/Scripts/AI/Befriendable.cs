@@ -14,6 +14,7 @@ public class Befriendable : MonoBehaviour
     Collider2D myCollider;
     GameObject childObj;
     internal LevelManager levelManager; //the levelmanager parent, will be set by individual level manager
+    AIFriendBehaviour aiScript;
     Color startColor, currentColor;
     void Start()
     {
@@ -24,6 +25,8 @@ public class Befriendable : MonoBehaviour
         spriteSkin.enabled = befriended;
         startColor = sprite.color;
         childObj.SetActive(false);
+        aiScript = GetComponent<AIFriendBehaviour>();
+        aiScript.enabled = false;
     }
 
     void Befriended()
@@ -34,6 +37,7 @@ public class Befriendable : MonoBehaviour
         myCollider.enabled = false;
         spriteSkin.enabled = true;
         childObj.SetActive(true);
+        aiScript.enabled = true;
         levelManager.IncreaseFamiliarity();
     }
 

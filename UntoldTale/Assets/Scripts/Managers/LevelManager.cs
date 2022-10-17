@@ -7,8 +7,8 @@ using UnityEngine.Events;
 //check how familiar you have became
 public class LevelManager : MonoBehaviour
 {
-    public UnityEvent playerLeaveSceneEvent = new UnityEvent();
-    public bool playerLeaving;
+    internal UnityEvent playerLeaveSceneEvent = new UnityEvent();
+    internal UnityEvent playerEnterLeaveZoneEvent =  new UnityEvent();
     [SerializeField] string levelName;
     [SerializeField] FMODUnity.StudioEventEmitter sceneBGMEmitter;
     [SerializeField] Color levelTrueColor;
@@ -32,12 +32,10 @@ public class LevelManager : MonoBehaviour
         doorToPreviousRoom.SetActive(false);
         
         AudioManager.Instance.AddToBGMEventList(levelName, sceneBGMEmitter);
-        playerLeaveSceneEvent.AddListener(leaveScene);
+        playerLeaveSceneEvent.AddListener(LeaveSceneEventAction);
+        playerEnterLeaveZoneEvent.AddListener(InLeaveZoneEventAction);
     }
-    void leaveScene()
-    {
-        Debug.Log("player leave " + this.name);
-    }
+
     void InitializeList()
     {        
         blobLists = new List<Befriendable>();
@@ -49,6 +47,34 @@ public class LevelManager : MonoBehaviour
             befriendable.levelManager = this;
         }
     }
+
+    void InLeaveZoneEventAction()
+    {
+        if(familiarMeter== 0) return;
+        foreach(var i in blobLists)
+        {
+            if(!i.gameObject.activeSelf) continue;
+            var ai = i.GetComponent<AIFriendBehaviour>();
+            if(ai.enabled) ai.follow = true;
+        }
+    }
+    void LeaveSceneEventAction()
+    {
+        if(familiarMeter== 0) return;
+        ResetBlobLocations();
+    }
+    void ResetBlobLocations()
+    {
+        foreach(var i in blobLists)
+        {
+            if(!i.gameObject.activeSelf) continue;
+
+            var ai = i.GetComponent<AIFriendBehaviour>();
+            if(ai.enabled) ai.MoveBackToDefaultPosition();
+        }
+    }
+
+
     //called when you befriend the blob, in Befriendable.cs
     public void IncreaseFamiliarity()
     {

@@ -5066,7 +5066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7fa451dceb21f4695b61f984f4fbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugMode: 0
+  debugMode: 1
   TitleCanvasUI: {fileID: 228726707}
   playerInput: {fileID: 1572282510}
 --- !u!4 &1887507026 stripped
