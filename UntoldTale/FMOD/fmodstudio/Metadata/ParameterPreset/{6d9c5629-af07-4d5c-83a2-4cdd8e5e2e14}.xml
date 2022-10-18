@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{6d9c5629-af07-4d5c-83a2-4cdd8e5e2e14}">
+		<property name="name">
+			<value>Tunnel</value>
+		</property>
+		<relationship name="folder">
+			<destination>{adc46c5f-33db-4145-89e1-79835b44877d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ba5e613a-815c-4f94-8b3a-83421e6e8440}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ba5e613a-815c-4f94-8b3a-83421e6e8440}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

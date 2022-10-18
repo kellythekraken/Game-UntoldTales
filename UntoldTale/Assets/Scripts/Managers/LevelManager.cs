@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
         playerLeaveSceneEvent.AddListener(LeaveSceneEventAction);
         playerEnterLeaveZoneEvent.AddListener(InLeaveZoneEventAction);
     }
-
+    void OnDisable() => AudioManager.Instance.RemoveSound(levelName);
     void InitializeList()
     {        
         blobLists = new List<Befriendable>();

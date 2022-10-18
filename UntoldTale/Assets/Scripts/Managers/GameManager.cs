@@ -43,9 +43,10 @@ public class GameManager : MonoBehaviour
     void ShowTitleScreen(bool show = false)
     {
         if(show){   //start screen
-            PauseGame();
+            AudioManager.Instance.StopAllBGM();
             StartCoroutine(FadeInScreen(startCanvas));
             restartAction.Disable();
+            PauseGame();
         }
         else {  //play
             StartCoroutine(FadeOutScreen(startCanvas));
@@ -87,7 +88,8 @@ public class GameManager : MonoBehaviour
     }
     void ReloadGame(InputAction.CallbackContext ctx)
     {
-       SceneManager.LoadScene(0);
+        AudioManager.Instance.StopAllBGM();
+        SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
     }
     void PauseGame ()
     {

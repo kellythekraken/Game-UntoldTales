@@ -51,7 +51,7 @@ public class AIFriendBehaviour : MonoBehaviour
                 else{ myState = AISTATE.REST;}
                 return;
             case AISTATE.REST:
-            return;
+                return;
         }
     }
     public void MoveBackToDefaultPosition()

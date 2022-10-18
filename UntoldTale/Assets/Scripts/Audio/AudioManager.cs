@@ -54,6 +54,7 @@ public class AudioManager : MonoBehaviour
 		if(currentPlayingBGM == eventName) return;
 
 		StopAllBGM();
+
 		LabeledEventEmitter emitter = BGMEventEmitters.Find(t => t._name == eventName);
 		emitter.eventEmitter.Play();
 		currentPlayingBGM = eventName;
@@ -69,6 +70,10 @@ public class AudioManager : MonoBehaviour
 	{
 		foreach(var i in BGMEventEmitters) 
 		{ i.eventEmitter.Stop();}
+	}
+	public void RemoveSound(string levelName)
+	{
+
 	}
 	public void ReleaseAllSound()
 	{

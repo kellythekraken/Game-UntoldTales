@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{5c0b607b-1e6f-456e-bdac-d72c7bf8313a}">
+		<property name="name">
+			<value>Kalimba</value>
+		</property>
+		<relationship name="folder">
+			<destination>{adc46c5f-33db-4145-89e1-79835b44877d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d321a172-dcf4-4342-bace-afc8c0f902db}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d321a172-dcf4-4342-bace-afc8c0f902db}">
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+	</object>
+</objects>
