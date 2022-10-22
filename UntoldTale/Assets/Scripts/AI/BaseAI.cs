@@ -26,7 +26,6 @@ public abstract class BaseAI : MonoBehaviour
 
     protected IEnumerator ResetPos(float delay = 0f)
     {
-        Debug.Log("going back to default position");
         yield return new WaitForSeconds(delay);
         float elapsed = 0f;
         var startpos = centerRb.position;
@@ -38,7 +37,6 @@ public abstract class BaseAI : MonoBehaviour
             yield return null;
         }
         centerRb.MovePosition(startpos);
-        Debug.Log("reset complete");
     }
     protected IEnumerator BoilAnimation()
     {

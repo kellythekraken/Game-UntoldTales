@@ -3,39 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //ONLY ENABLED AFTER BEFRIENDED
-public enum AISTATE { FOLLOW, INVITE, RETREAT, REST}   
+public enum AISTATE { FOLLOW, RETREAT }   
 public class AIFriendBehaviour : BaseAI
 {
     //follow : hard follow ; invite: stay still and make space for player when player come close ; retreat: back to default pos
-    public AISTATE myState {get{return _mystate;} set { if(value ==myState) return; _mystate=value; SetAIBehaviourByState();}}
+    public AISTATE myState {get{return _mystate;} set {  rest = false; if(value !=myState) _mystate=value;}}
     AISTATE _mystate;
+    bool rest;
 
     protected override void Start()
     {
         base.Start();
         calculatedRadius = transform.localScale.x * GetComponent<CircleCollider2D>().radius + 3.5f;
-        _mystate = AISTATE.REST;
+        rest = true;
     }
 
     void FixedUpdate()
     {
-        //SetAIBehaviourByState();
+        if(rest) return;
+        SetAIBehaviourByState();
     }
     public void SetAIBehaviourByState()
     {
-        Debug.Log("current state: " + myState);
         switch(_mystate)
         {
             case AISTATE.FOLLOW:
-                StartCoroutine(FollowBehaviour());
-            return;
-            case AISTATE.INVITE:
-            return;
-                StartCoroutine(InviteBehaviour());
-            case AISTATE.RETREAT:
-                MoveBackToDefaultPosition();
+                if(Vector2.Distance(centerRb.position,wormi.position) > calculatedRadius)
+                {
+                    Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, 0.01f);
+                    centerRb.MovePosition(newPosition);
+                }
+                else
+                {
+                    Vector2 direction = transform.position - wormi.transform.position;
+                    direction.Normalize();
+                    centerRb.AddForce(direction * 30f * centerRb.mass);
+                }
                 return;
-            case AISTATE.REST:
+            case AISTATE.RETREAT:
+                if(Vector2.Distance(centerRb.position,startPosition) > 1f)
+                {
+                    var lerpVal = Vector2.Lerp(centerRb.position, startPosition, 0.01f);
+                    centerRb.MovePosition(lerpVal);
+                }
+                else{ rest = true;}
                 return;
         }
     }
