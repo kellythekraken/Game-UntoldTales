@@ -10,7 +10,6 @@ public class AIFamilyBehaviour : BaseAI
         calculatedRadius = transform.localScale.x * GetComponent<CircleCollider2D>().radius +0.5f;
         GameManager.Instance.GameStartEvent.AddListener(GameStarInit);
     }
-
     IEnumerator FamilyOnGameStartBehaviour()
     {
         // slowly march towards wormi and hug tight

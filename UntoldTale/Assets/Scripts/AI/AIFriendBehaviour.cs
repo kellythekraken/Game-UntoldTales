@@ -7,7 +7,7 @@ public enum AISTATE { FOLLOW, INVITE, RETREAT, REST}
 public class AIFriendBehaviour : BaseAI
 {
     //follow : hard follow ; invite: stay still and make space for player when player come close ; retreat: back to default pos
-    public AISTATE myState {get{return _mystate;} set { if(value !=myState) _mystate=value; SetAIBehaviourByState();}}
+    public AISTATE myState {get{return _mystate;} set { if(value ==myState) return; _mystate=value; SetAIBehaviourByState();}}
     AISTATE _mystate;
 
     protected override void Start()
@@ -23,21 +23,17 @@ public class AIFriendBehaviour : BaseAI
     }
     public void SetAIBehaviourByState()
     {
+        Debug.Log("current state: " + myState);
         switch(_mystate)
         {
             case AISTATE.FOLLOW:
-                //maybe go back to original position after two seconds?
                 StartCoroutine(FollowBehaviour());
             return;
-                if(Vector2.Distance(centerRb.position,wormi.position) > calculatedRadius)
-                {
-                    Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, followSpeed * Time.deltaTime);
-                    centerRb.MovePosition(newPosition);
-                }
             case AISTATE.INVITE:
             return;
+                StartCoroutine(InviteBehaviour());
             case AISTATE.RETREAT:
-                ResetPos();
+                MoveBackToDefaultPosition();
                 return;
             case AISTATE.REST:
                 return;
@@ -45,25 +41,38 @@ public class AIFriendBehaviour : BaseAI
     }
     public void MoveBackToDefaultPosition()
     {
+        StopCoroutine(FollowBehaviour());
         StartCoroutine(ResetPos());
     }
-
+    
+    IEnumerator InviteBehaviour()
+    {
+        float elapsed = 0;
+        while(elapsed<100f)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+    }
     IEnumerator FollowBehaviour()
     {
         var timeElapsed = 0f;
-        while(timeElapsed < 5f)
+        while(timeElapsed < 100f)
         {
             if(Vector2.Distance(centerRb.position,wormi.position) > calculatedRadius)
             {
                 Vector2 newPosition = Vector2.Lerp(centerRb.position,wormi.position, 0.01f);
                 centerRb.MovePosition(newPosition);
             }
-            else {yield break;}
-
+            else
+            {
+                Vector2 direction = transform.position - wormi.transform.position;
+                direction.Normalize();
+                centerRb.AddForce(direction *5f * centerRb.mass);
+            }
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-        ResetPos(1f);
     }
 
 }

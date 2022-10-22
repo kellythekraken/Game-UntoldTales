@@ -7,7 +7,7 @@ public abstract class BaseAI : MonoBehaviour
     protected Transform wormi;
     protected float calculatedRadius;
     protected Rigidbody2D centerRb;
-    protected Vector3 startPosition;
+    public Vector3 startPosition;
     public float followSpeed = .3f;
     protected List<Rigidbody2D> bones;
 
@@ -26,6 +26,7 @@ public abstract class BaseAI : MonoBehaviour
 
     protected IEnumerator ResetPos(float delay = 0f)
     {
+        Debug.Log("going back to default position");
         yield return new WaitForSeconds(delay);
         float elapsed = 0f;
         var startpos = centerRb.position;
@@ -36,6 +37,8 @@ public abstract class BaseAI : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
+        centerRb.MovePosition(startpos);
+        Debug.Log("reset complete");
     }
     protected IEnumerator BoilAnimation()
     {

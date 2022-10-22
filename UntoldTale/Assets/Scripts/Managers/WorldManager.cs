@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//manages the load and unload of scenes
+
 public class WorldManager : MonoBehaviour
 {
     public static WorldManager Instance;
@@ -13,12 +15,6 @@ public class WorldManager : MonoBehaviour
     void Start()
     {
         currentSceneInLoad = new List<string>();
-        InitWorld();
-    }
-
-    public void InitWorld()
-    {
-        //LoadScene("Level_1");
     }
 
     public void ReloadGame()

@@ -51,14 +51,16 @@ public class LevelManager : MonoBehaviour
     void InLeaveZoneEventAction()
     {
         if(familiarMeter== 0) return;
+
         foreach(var i in blobLists)
         {
             if(!i.gameObject.activeSelf) continue;
+            
             var ai = i.GetComponent<AIFriendBehaviour>();
             if(ai.enabled) ai.myState = AISTATE.FOLLOW;
         }
     }
-    void LeaveSceneEventAction()
+    void LeaveSceneEventAction()    //player leave the scene
     {
         if(familiarMeter== 0) return;
         ResetBlobLocations();
