@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GradientBackground
+  m_Name: TunnelBG-HomeLvl1
   m_Shader: {fileID: 4800000, guid: a3d4593b409d26d4c8c380903f5995d5, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []

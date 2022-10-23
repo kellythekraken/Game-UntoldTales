@@ -12,7 +12,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] string levelName;
     [SerializeField] FMODUnity.StudioEventEmitter sceneBGMEmitter;
     [SerializeField] Color levelTrueColor;
-    SpriteRenderer levelBackground,tunnelBackground;
+    SpriteRenderer levelBackground;
+    [SerializeField] Material prevTunnelMaterial, nextTunnelMaterial;
     Transform blobParent;
     List<Befriendable> blobLists;
     public float blobTotalCount, friendCount;
@@ -23,8 +24,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         blobParent = transform.Find("Blobs");
-        levelBackground = transform.Find("Background").GetComponent<SpriteRenderer>();
-        tunnelBackground = transform.Find("Tunnel_Background").GetComponent<SpriteRenderer>();
+        levelBackground = transform.Find("Color_BG").GetComponent<SpriteRenderer>();
         InitializeList();
         blobTotalCount = blobLists.Count;
         friendCount = 0f;
@@ -105,7 +105,8 @@ public class LevelManager : MonoBehaviour
         {
             var smoothColor = Color.Lerp(currentColor, newColor, (elapsedTime / waitTime));
             levelBackground.color = smoothColor;
-            tunnelBackground.material.SetColor("_Color2",smoothColor);
+            prevTunnelMaterial.SetColor("_Color2",smoothColor);
+            nextTunnelMaterial.SetColor("_Color",smoothColor);
             elapsedTime += Time.deltaTime;
             yield return null;
         } 
