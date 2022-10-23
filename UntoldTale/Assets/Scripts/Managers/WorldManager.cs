@@ -34,6 +34,7 @@ public class WorldManager : MonoBehaviour
     }
     public void UnloadScene(string sceneName)
     {
+        currentSceneInLoad.Remove(sceneName);
         SceneManager.UnloadSceneAsync(sceneName);
     }
 }
