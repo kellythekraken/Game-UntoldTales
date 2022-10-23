@@ -971,7 +971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977713250}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1323,7 +1323,7 @@ GameObject:
   - component: {fileID: 1457731609}
   - component: {fileID: 1457731610}
   m_Layer: 0
-  m_Name: Level1_BGM
+  m_Name: Level2_BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1337,7 +1337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457731608}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1359,20 +1359,18 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -237558187
-      Data2: 1306841414
-      Data3: 1819111579
-      Data4: -1401913523
-    Path: event:/BGM/Level 1New
+      Data1: 175208793
+      Data2: 1189617891
+      Data3: 1697687443
+      Data4: 682927695
+    Path: event:/BGM/Level 2
   Event: 
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params:
-  - Name: Familiarity
-    Value: 0
+  Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
@@ -1582,7 +1580,7 @@ GameObject:
   - component: {fileID: 1942723343}
   - component: {fileID: 1942723344}
   m_Layer: 0
-  m_Name: Level1_BorderSprite
+  m_Name: BorderSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1596,7 +1594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942723342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 61.4, y: -12.8, z: 0}
+  m_LocalPosition: {x: -8.5, y: 54.4, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1644,12 +1642,12 @@ SpriteRenderer:
   m_SortingLayerID: 341675537
   m_SortingLayer: 2
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: f00fae4d85e188442ace939110a3f862, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7f54265e1d507b45bed0c9a0eb80d9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 39.605415, y: 36.84}
+  m_Size: {x: 70.17814, y: 20.560001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -971,7 +971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977713250}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1323,7 +1323,7 @@ GameObject:
   - component: {fileID: 1457731609}
   - component: {fileID: 1457731610}
   m_Layer: 0
-  m_Name: Level1_BGM
+  m_Name: Level2_BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1337,7 +1337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457731608}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1359,20 +1359,18 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -237558187
-      Data2: 1306841414
-      Data3: 1819111579
-      Data4: -1401913523
-    Path: event:/BGM/Level 1New
+      Data1: 175208793
+      Data2: 1189617891
+      Data3: 1697687443
+      Data4: 682927695
+    Path: event:/BGM/Level 2
   Event: 
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params:
-  - Name: Familiarity
-    Value: 0
+  Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
@@ -1582,7 +1580,7 @@ GameObject:
   - component: {fileID: 1942723343}
   - component: {fileID: 1942723344}
   m_Layer: 0
-  m_Name: Level1_BorderSprite
+  m_Name: BorderSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1596,7 +1594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942723342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 77.7, y: -16.1, z: 0}
+  m_LocalPosition: {x: 30.9, y: 9.3, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1644,12 +1642,12 @@ SpriteRenderer:
   m_SortingLayerID: 341675537
   m_SortingLayer: 2
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 3aeee7de201192746ba39a0108331bb0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 693539b8102c2ee41aacf283d72d2b11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 28.465601, y: 23.169998}
+  m_Size: {x: 70.17814, y: 20.560001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
