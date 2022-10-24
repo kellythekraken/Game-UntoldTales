@@ -2,10 +2,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
-//controls scene loading and restart
+//controls input
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] bool debugMode;
@@ -88,8 +88,7 @@ public class GameManager : MonoBehaviour
     }
     void ReloadGame(InputAction.CallbackContext ctx)
     {
-        AudioManager.Instance.StopAllBGM();
-        SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+        WorldManager.Instance.ReloadGame();
     }
     void PauseGame ()
     {

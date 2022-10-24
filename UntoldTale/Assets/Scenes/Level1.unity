@@ -1095,7 +1095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &774665486
 Transform:
   m_ObjectHideFlags: 0
@@ -1668,20 +1668,18 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -237558187
-      Data2: 1306841414
-      Data3: 1819111579
-      Data4: -1401913523
-    Path: event:/BGM/Level 1New
+      Data1: -1710545507
+      Data2: 1309845010
+      Data3: 1393549243
+      Data4: 229431656
+    Path: event:/BGM/Level 1
   Event: 
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params:
-  - Name: Familiarity
-    Value: 0
+  Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20

@@ -256,10 +256,10 @@
 	</object>
 	<object class="AutomationPoint" id="{44beccd4-07ea-4923-ac9c-e51a7146cbdb}">
 		<property name="position">
-			<value>1.0440413793103445</value>
+			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-34</value>
+			<value>-25</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{98b5a0f5-ca2c-4fe0-aff3-d60196798498}">
