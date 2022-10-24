@@ -7,8 +7,12 @@ using UnityEngine.Events;
 //check how familiar you have became
 public class LevelManager : MonoBehaviour
 {
+    internal UnityEvent ActivateLevel = new UnityEvent();
+    internal UnityEvent DeactivateLevel = new UnityEvent();
     internal UnityEvent playerLeaveSceneEvent = new UnityEvent();
     internal UnityEvent playerEnterLeaveZoneEvent =  new UnityEvent();
+    [SerializeField] SpriteRenderer borderSprite;
+    [SerializeField] Sprite borderUncovered;
     [SerializeField] string levelName;
     [SerializeField] FMODUnity.StudioEventEmitter sceneBGMEmitter;
     [SerializeField] Color levelTrueColor;
@@ -89,7 +93,11 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(BackgroundColorTransition());
         //AudioManager.Instance.SetGlobalParam("Familiarity", familiarMeter);
         //check if you could proceed to next level
-        if(familiarMeter>=0.5f) Debug.Log("proceed to next level!");
+        if(familiarMeter>=0.5f) 
+        {
+            Debug.Log("proceed to next level!");
+            borderSprite.sprite = borderUncovered;
+        }
     }
 
     IEnumerator BackgroundColorTransition()

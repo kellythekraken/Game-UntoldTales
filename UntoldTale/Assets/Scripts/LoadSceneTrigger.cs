@@ -7,7 +7,7 @@ using UnityEngine;
 public class LoadSceneTrigger : MonoBehaviour
 {
     [SerializeField] string[] sceneToLoad;
-    [SerializeField] string[] sceneToUnload;
+    //[SerializeField] string[] sceneToUnload;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,7 +23,7 @@ public class LoadSceneTrigger : MonoBehaviour
     {
         foreach(var i in sceneToLoad) WorldManager.Instance.LoadScene(i);
 
-        foreach(var i in sceneToUnload) WorldManager.Instance.UnloadScene(i);
+        //foreach(var i in sceneToUnload) WorldManager.Instance.UnloadScene(i);
     }
 
 }

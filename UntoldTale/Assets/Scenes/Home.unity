@@ -1016,7 +1016,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad:
   - Level1
-  sceneToUnload: []
 --- !u!1 &374440359
 GameObject:
   m_ObjectHideFlags: 0
@@ -4343,6 +4342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e889ef429cf6243a735b436d9d4b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSceneInLoad: []
   sceneList: []
 --- !u!4 &1321782247
 Transform:
