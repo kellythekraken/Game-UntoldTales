@@ -271,7 +271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97435619}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 59.7, y: 1.0000019, z: 0}
+  m_LocalPosition: {x: 59.7, y: 1, z: 0}
   m_LocalScale: {x: 3.0065308, y: 3.0065308, z: 3.0065308}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -281,8 +281,8 @@ Transform:
   - {fileID: 955545834}
   - {fileID: 1427283222}
   - {fileID: 1169240241}
-  m_Father: {fileID: 977713251}
-  m_RootOrder: 4
+  m_Father: {fileID: 709240893}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &141137608
 PrefabInstance:
@@ -1080,6 +1080,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6654377, y: 4.0065923}
   m_EdgeRadius: 0
+--- !u!1 &709240892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709240893}
+  m_Layer: 0
+  m_Name: SceneObjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &709240893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709240892}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 774665486}
+  - {fileID: 97435620}
+  m_Father: {fileID: 977713251}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &774665485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1136,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774665485}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2, y: -16.499998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1113,8 +1146,8 @@ Transform:
   - {fileID: 164341033}
   - {fileID: 1899542526}
   - {fileID: 1139275400}
-  m_Father: {fileID: 977713251}
-  m_RootOrder: 5
+  m_Father: {fileID: 709240893}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &955545833
 GameObject:
@@ -1210,8 +1243,7 @@ Transform:
   - {fileID: 1785118}
   - {fileID: 1559667490}
   - {fileID: 24994846}
-  - {fileID: 97435620}
-  - {fileID: 774665486}
+  - {fileID: 709240893}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1227,6 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fa818cb88dfa94e9c127ea9b80a3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelSceneObject: {fileID: 0}
   borderSprite: {fileID: 1942723344}
   borderUncovered: {fileID: 21300000, guid: f00fae4d85e188442ace939110a3f862, type: 3}
   levelName: Level1
@@ -1234,9 +1267,6 @@ MonoBehaviour:
   levelTrueColor: {r: 0, g: 0.6509434, b: 0.6509434, a: 1}
   prevTunnelMaterial: {fileID: 2100000, guid: 9d167e0775f6c3a4da476cd752978b16, type: 2}
   nextTunnelMaterial: {fileID: 2100000, guid: a0d1939b885e9734490891c3935344b6, type: 2}
-  blobTotalCount: 0
-  friendCount: 0
-  familiarMeter: 0
   doorToPreviousRoom: {fileID: 1240274719}
   doorToNextRoom: {fileID: 1465918913}
 --- !u!1 &1102975368

@@ -1015,8 +1015,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad:
   - Level3
-  sceneToUnload:
-  - Level1
 --- !u!1 &557810896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,6 +1375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fa818cb88dfa94e9c127ea9b80a3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  borderSprite: {fileID: 1942723344}
+  borderUncovered: {fileID: 21300000, guid: 693539b8102c2ee41aacf283d72d2b11, type: 3}
   levelName: Level2
   sceneBGMEmitter: {fileID: 1457731610}
   levelTrueColor: {r: 0, g: 0.6509434, b: 0.6509434, a: 1}
@@ -2361,7 +2361,7 @@ SpriteRenderer:
   m_SortingLayerID: 341675537
   m_SortingLayer: 2
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 693539b8102c2ee41aacf283d72d2b11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41a4a28eb53a1cf49ba1e4a520b3be28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

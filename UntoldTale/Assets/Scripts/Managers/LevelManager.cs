@@ -11,17 +11,20 @@ public class LevelManager : MonoBehaviour
     internal UnityEvent DeactivateLevel = new UnityEvent();
     internal UnityEvent playerLeaveSceneEvent = new UnityEvent();
     internal UnityEvent playerEnterLeaveZoneEvent =  new UnityEvent();
+    
+    [SerializeField] GameObject levelSceneObject;
     [SerializeField] SpriteRenderer borderSprite;
     [SerializeField] Sprite borderUncovered;
     [SerializeField] string levelName;
+
     [SerializeField] FMODUnity.StudioEventEmitter sceneBGMEmitter;
     [SerializeField] Color levelTrueColor;
     SpriteRenderer levelBackground;
     [SerializeField] Material prevTunnelMaterial, nextTunnelMaterial;
     Transform blobParent;
     List<Befriendable> blobLists;
-    public float blobTotalCount, friendCount;
-    public float familiarMeter = 0f;   //if this goes above 0.5, you could proceed to the next level
+    float blobTotalCount, friendCount;
+    float familiarMeter = 0f;   //if this goes above 0.5, you could proceed to the next level
     Color startColor;
     [SerializeField] GameObject doorToPreviousRoom, doorToNextRoom;
     
@@ -34,10 +37,14 @@ public class LevelManager : MonoBehaviour
         friendCount = 0f;
         startColor = levelBackground.color;
         doorToPreviousRoom.SetActive(false);
+        doorToNextRoom.SetActive(true);
         
         AudioManager.Instance.AddToBGMEventList(levelName, sceneBGMEmitter);
+        
         playerLeaveSceneEvent.AddListener(LeaveSceneEventAction);
         playerEnterLeaveZoneEvent.AddListener(InLeaveZoneEventAction);
+        DeactivateLevel.AddListener(DeactivateLevelEvent);
+        ActivateLevel.AddListener(ActivateLevelEvent);
     }
     void OnDisable() => AudioManager.Instance.RemoveSound(levelName);
     void InitializeList()
@@ -52,6 +59,8 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    void ActivateLevelEvent() => levelSceneObject.SetActive(true);
+    void DeactivateLevelEvent() => levelSceneObject.SetActive(false);
     void InLeaveZoneEventAction()
     {
         if(familiarMeter== 0) return;
@@ -96,6 +105,7 @@ public class LevelManager : MonoBehaviour
         if(familiarMeter>=0.5f) 
         {
             Debug.Log("proceed to next level!");
+            doorToNextRoom.SetActive(false);
             borderSprite.sprite = borderUncovered;
         }
     }
