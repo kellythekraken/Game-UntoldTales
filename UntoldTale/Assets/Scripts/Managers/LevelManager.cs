@@ -12,26 +12,25 @@ public class LevelManager : MonoBehaviour
     internal UnityEvent playerLeaveSceneEvent = new UnityEvent();
     internal UnityEvent playerEnterLeaveZoneEvent =  new UnityEvent();
     
-    [SerializeField] GameObject levelSceneObject;
     [SerializeField] SpriteRenderer borderSprite;
     [SerializeField] Sprite borderUncovered;
-    [SerializeField] string levelName;
-
-    [SerializeField] FMODUnity.StudioEventEmitter sceneBGMEmitter;
     [SerializeField] Color levelTrueColor;
-    SpriteRenderer levelBackground;
     [SerializeField] Material prevTunnelMaterial, nextTunnelMaterial;
-    Transform blobParent;
+    [SerializeField] Transform blobParent;
+    [SerializeField] GameObject doorToPreviousRoom, doorToNextRoom;
+    GameObject levelSceneObject;
+    SpriteRenderer levelBackground;
     List<Befriendable> blobLists;
+    FMODUnity.StudioEventEmitter sceneBGMEmitter;
     float blobTotalCount, friendCount;
     float familiarMeter = 0f;   //if this goes above 0.5, you could proceed to the next level
     Color startColor;
-    [SerializeField] GameObject doorToPreviousRoom, doorToNextRoom;
     
     void Start()
     {
-        blobParent = transform.Find("Blobs");
         levelBackground = transform.Find("Color_BG").GetComponent<SpriteRenderer>();
+        sceneBGMEmitter = GetComponent<FMODUnity.StudioEventEmitter>();
+        levelSceneObject = transform.Find("SceneObjects").gameObject;
         InitializeList();
         blobTotalCount = blobLists.Count;
         friendCount = 0f;
@@ -39,14 +38,14 @@ public class LevelManager : MonoBehaviour
         doorToPreviousRoom.SetActive(false);
         doorToNextRoom.SetActive(true);
         
-        AudioManager.Instance.AddToBGMEventList(levelName, sceneBGMEmitter);
+        AudioManager.Instance.AddToBGMEventList(gameObject.name, sceneBGMEmitter);
         
         playerLeaveSceneEvent.AddListener(LeaveSceneEventAction);
         playerEnterLeaveZoneEvent.AddListener(InLeaveZoneEventAction);
         DeactivateLevel.AddListener(DeactivateLevelEvent);
         ActivateLevel.AddListener(ActivateLevelEvent);
     }
-    void OnDisable() => AudioManager.Instance.RemoveSound(levelName);
+    void OnDisable() => AudioManager.Instance.RemoveSound(gameObject.name);
     void InitializeList()
     {        
         blobLists = new List<Befriendable>();

@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LeaveSceneTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    LevelManager levelManager;
+    //[SerializeField] GameObject levelSceneObject;
 
-    // Update is called once per frame
-    void Update()
+    void Start() => levelManager = GetComponentInParent<LevelManager>();
+
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        
+        if(collider.gameObject.CompareTag("Player")) {levelManager.ActivateLevel.Invoke(); Debug.Log("set active");}
+    }
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if(collider.gameObject.CompareTag("Player")) {levelManager.DeactivateLevel.Invoke(); Debug.Log("deactivate ");}
     }
 }

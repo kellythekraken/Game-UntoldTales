@@ -243,9 +243,8 @@ Transform:
   - {fileID: 1946954585}
   - {fileID: 1102975369}
   - {fileID: 435511483}
-  - {fileID: 1273971713}
-  m_Father: {fileID: 977713251}
-  m_RootOrder: 3
+  m_Father: {fileID: 709240893}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &97435619
 GameObject:
@@ -1110,6 +1109,7 @@ Transform:
   m_Children:
   - {fileID: 774665486}
   - {fileID: 97435620}
+  - {fileID: 24994846}
   m_Father: {fileID: 977713251}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1220,6 +1220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 977713251}
   - component: {fileID: 977713252}
+  - component: {fileID: 977713253}
   m_Layer: 0
   m_Name: Level1
   m_TagString: Untagged
@@ -1242,10 +1243,10 @@ Transform:
   - {fileID: 1942723343}
   - {fileID: 1785118}
   - {fileID: 1559667490}
-  - {fileID: 24994846}
+  - {fileID: 1273971713}
   - {fileID: 709240893}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &977713252
 MonoBehaviour:
@@ -1259,16 +1260,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fa818cb88dfa94e9c127ea9b80a3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSceneObject: {fileID: 0}
   borderSprite: {fileID: 1942723344}
   borderUncovered: {fileID: 21300000, guid: f00fae4d85e188442ace939110a3f862, type: 3}
-  levelName: Level1
-  sceneBGMEmitter: {fileID: 1457731610}
   levelTrueColor: {r: 0, g: 0.6509434, b: 0.6509434, a: 1}
   prevTunnelMaterial: {fileID: 2100000, guid: 9d167e0775f6c3a4da476cd752978b16, type: 2}
   nextTunnelMaterial: {fileID: 2100000, guid: a0d1939b885e9734490891c3935344b6, type: 2}
+  blobParent: {fileID: 774665486}
   doorToPreviousRoom: {fileID: 1240274719}
   doorToNextRoom: {fileID: 1465918913}
+--- !u!114 &977713253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977713250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1710545507
+      Data2: 1309845010
+      Data3: 1393549243
+      Data4: 229431656
+    Path: event:/BGM/Level 1
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1102975368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,7 +1624,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1273971713}
-  - component: {fileID: 1273971714}
+  - component: {fileID: 1273971716}
+  - component: {fileID: 1273971715}
   m_Layer: 0
   m_Name: SceneBoundaryTrigger
   m_TagString: Untagged
@@ -1610,27 +1640,53 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273971712}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.9, y: -17.8, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 64.7, y: -7.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 24994846}
-  m_RootOrder: 8
+  m_Father: {fileID: 977713251}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1273971714
-BoxCollider:
+--- !u!114 &1273971715
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273971712}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5dcbcca84f0ff48a953b12ec3975e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSceneObject: {fileID: 709240892}
+--- !u!61 &1273971716
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273971712}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.7980728, y: -2.3658895}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 65.190025, y: 43.85499, z: 1}
-  m_Center: {x: -12.960239, y: 2.6899986, z: 0}
+  m_Size: {x: 58.596146, y: 44.73178}
+  m_EdgeRadius: 0
 --- !u!1 &1427283221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,68 +1754,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!1 &1457731608
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1457731609}
-  - component: {fileID: 1457731610}
-  m_Layer: 0
-  m_Name: Level1_BGM
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1457731609
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457731608}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1457731610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457731608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1710545507
-      Data2: 1309845010
-      Data3: 1393549243
-      Data4: 229431656
-    Path: event:/BGM/Level 1
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &1465918913
 GameObject:
   m_ObjectHideFlags: 0
